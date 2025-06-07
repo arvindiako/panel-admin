@@ -1,0 +1,28 @@
+html {
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    @media screen and (min-width:768px) {
+        font-size: 16px;
+    }
+}
+body {
+    font-family: "IRANSansXV", sans-serif;
+    overflow-x: hidden;
+}
+a {
+    text-decoration: none;
+    color: unset;
+}
+i {
+    &.material-symbols-rounded {
+        font-variation-settings: "FILL" 1, "wght" 600, "GRAD" 0, "opsz" 20;
+    }
+}
+@import "fonts";
+@import "variables";
+@import "mixins";
+@import "header";
+@import "dashboard_wrapper";
+@import "orders_wrapper";
+@import "datePickers";

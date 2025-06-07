@@ -1,0 +1,102 @@
+@mixin dana($font-family, $font-file, $font-weight) {
+    @font-face {
+      font-family: $font-family;
+      src: url($font-file + ".woff") format("woff"),
+        url($font-file + ".woff2") format("woff2"),
+        url($font-file + ".ttf") format("ttf");
+      // url($font-file + ".eot?#iefix") format("embedded-opentype"),;
+      font-weight: $font-weight;
+      font-style: normal;
+    }
+  }
+  
+  @mixin yekan-bakh($font-family, $font-file, $font-weight) {
+    @font-face {
+      font-family: $font-family;
+      src: url($font-file + ".woff") format("woff"),
+        url($font-file + ".woff2") format("woff2"),
+        url($font-file + ".ttf") format("ttf");
+      // url($font-file + ".eot?#iefix") format("embedded-opentype"),;
+      font-weight: $font-weight;
+      font-style: normal;
+    }
+  }
+  
+  @mixin inter($font-family, $font-file, $font-weight) {
+    @font-face {
+      font-family: $font-family;
+      src: url($font-file + ".ttf") format("ttf"),
+      url($font-file + ".woff") format("woff"),
+      url($font-file + ".woff2") format("woff2");
+      // url($font-file + ".eot?#iefix") format("embedded-opentype"),;
+      font-weight: $font-weight;
+      font-style: normal;
+    }
+  }
+  //iransans
+  @mixin IRANSansXV($font-family, $font-file, $font-weight) {
+    @font-face {
+      font-family: $font-family;
+      src: url($font-file + ".ttf") format("ttf"),
+        url($font-file + ".woff") format("woff"),
+        url($font-file + ".woff2") format("woff2");
+      // url($font-file + ".eot?#iefix") format("embedded-opentype"),;
+      font-weight: $font-weight;
+      font-style: normal;
+    }
+  }
+  //shabnam   
+  @mixin shabnam($font-family, $font-file, $font-weight) {
+    @font-face {
+      font-family: $font-family;
+      src: url($font-file + ".ttf") format("ttf"),
+        url($font-file + ".woff") format("woff"),
+        url($font-file + ".woff2") format("woff2");
+      // url($font-file + ".eot?#iefix") format("embedded-opentype"),;
+      font-weight: $font-weight;
+      font-style: normal;
+    }
+  }
+
+@include dana("dana", "../fonts/dana/Dana-Thin", 100);
+@include dana("dana", "../fonts/dana/Dana-Light", 300);
+@include dana("dana", "../fonts/dana/Dana-Regular", 400);
+@include dana("dana", "../fonts/dana/Dana-Medium", 500);
+@include dana("dana", "../fonts/dana/Dana-Bold", 700);
+@include dana("dana", "../fonts/dana/Dana-ExtraBold", 800);
+@include dana("dana", "../fonts/dana/Dana-Black", 900);
+//yekanbakh
+@include yekan-bakh("yekan bakh", "../fonts/yekan-bakh/Yekan-Bakh-Thin", 100);
+@include yekan-bakh("yekan bakh", "../fonts/yekan-bakh/Yekan-BakhLight", 300);
+@include yekan-bakh("yekan bakh", "../fonts/yekan-bakh/Yekan-BakhRegular", 400);
+@include yekan-bakh("yekan bakh", "../fonts/yekan-bakh/Yekan-BakhMedium", 500);
+@include yekan-bakh("yekan bakh", "../fonts/yekan-bakh/Yekan-BakhBold", 700);
+@include yekan-bakh("yekan bakh", "../fonts/yekan-bakh/Yekan-BakhHeavy", 800);
+@include yekan-bakh("yekan bakh", "../fonts/yekan-bakh/Yekan-BakhFat", 900);
+//inter fonts
+@include inter("inter", "../fonts/inter/Inter-Thin", 100);
+@include inter("inter", "../fonts/inter/Inter-Thin", 200);
+@include inter("inter", "../fonts/inter/Inter-ExtraLight", 200);
+@include inter("inter", "../fonts/inter/Inter-Light", 300);
+@include inter("inter", "../fonts/inter/Inter-Regular", 400);
+@include inter("inter", "../fonts/inter/Inter-Medium", 500);
+@include inter("inter", "../fonts/inter/Inter-SemiBold", 600);
+@include inter("inter", "../fonts/inter/Inter-Bold", 700);
+@include inter("inter", "../fonts/inter/Inter-ExtraBold", 800);
+@include inter("inter", "../fonts/inter/Inter-Black", 900);
+//iransans
+@include IRANSansXV("IRANSansXV", "../fonts/iransans/IRANSansX-Thin", 100);
+@include IRANSansXV("IRANSansXV", "../fonts/iransans/IRANSansX-UltraLight", 200);
+@include IRANSansXV("IRANSansXV", "../fonts/iransans/IRANSansX-Light", 300);
+@include IRANSansXV("IRANSansXV", "../fonts/iransans/IRANSansX-Regular", 400);
+@include IRANSansXV("IRANSansXV", "../fonts/iransans/IRANSansX-Medium", 500);
+@include IRANSansXV("IRANSansXV", "../fonts/iransans/IRANSansX-DemiBold", 600);
+@include IRANSansXV("IRANSansXV", "../fonts/iransans/IRANSansX-Bold", 700);
+@include IRANSansXV("IRANSansXV", "../fonts/iransans/IRANSansX-ExtraBold", 800);
+@include IRANSansXV("IRANSansXV", "../fonts/iransans/IRANSansX-Black", 900);
+//shabnam
+
+@include shabnam("shabnam", "../fonts/shabnam/Shabnam-Thin", 100);
+@include shabnam("shabnam", "../fonts/shabnam/Shabnam-Light", 400);
+@include shabnam("shabnam", "../fonts/shabnam/Shabnam-Medium", 500);
+@include shabnam("shabnam", "../fonts/shabnam/Shabnam-Bold", 700);

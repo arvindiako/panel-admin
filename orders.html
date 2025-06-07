@@ -1,0 +1,2135 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/fonts/remixicon.css">
+    <link rel="stylesheet" href="/fontawesome-free-6.7.2-web/css/all.css">
+    <link rel="stylesheet" href="/material/node_modules/material-symbols/index.css">
+    <link rel="stylesheet" href="/bootstrap-5.3.5/dist/css/bootstrap.rtl.css">
+    <link rel="stylesheet" href="/scss/main.css">
+    <title>Orders</title>
+</head>
+
+<body class="d-flex flex-row align-items-center justify-content-start w-100 h-100">
+
+    <header id="header" class="header_update shadow ">
+        <div class="crm_header shadow">
+
+            <div class="mobile_menu_closing d-flex d-md-none" id="mobile_menu_closing">
+                <i class="material-symbols-rounded menu_close">
+                    close
+                </i>
+            </div>
+
+            <div class="oppening_button  d-md-flex" id="oppening_button">
+                <i class="material-symbols-rounded menu_open ">
+                    menu_open
+                </i>
+            </div>
+            <div class="closing_button d-none d-md-flex" id="closing_button">
+                <i class="material-symbols-rounded menu_close">
+                    close
+                </i>
+            </div>
+
+            <a class="logo_area" href="#">
+                <div class="logo_area-icon">
+                    <i class="material-symbols-rounded">
+                        dashboard
+                    </i>
+                </div>
+                <div class="logo_area-text">
+                    <h4 class="logo_area-text-inner" aria-label="شرکت ریواس سیستم پارس" title="شرکت ریواس سیستم پارس">
+                        شرکت ریواس سیستم پارس
+                        شرکت ریواس سیستم پارس
+                        شرکت ریواس سیستم پارس
+                    </h4>
+                </div>
+
+            </a>
+
+            <nav class="crm_header-nav">
+
+                <div class="crm_header-nav-box">
+
+                    <div class="navigation_box padding_inline_updates">
+                        <ul class="navigation_box-list">
+
+
+                            <li class="navigation_box-list-item active">
+                                <a class="navigation_box-list-item-inner" href="#">
+                                    <div class="list-item_icon">
+                                        <i class="material-symbols-rounded">
+                                            dashboard
+                                        </i>
+                                    </div>
+                                    <h5 class="list-item_text ">
+                                        داشبورد
+                                    </h5>
+                                </a>
+                            </li>
+
+
+
+                            <li class="navigation_box-list-item">
+                                <a class="navigation_box-list-item-inner have_child">
+                                    <div class="list-item_icon">
+                                        <i class="material-symbols-rounded">
+                                            group
+                                        </i>
+                                    </div>
+                                    <h5 class="list-item_text ">کاربران</h5>
+                                </a>
+                                <ul class="navigation_box-list-item-children ">
+                                    <li class="children-item ">
+                                        <a class="children-item-inner ">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    supervisor_account
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                لیست کاربران
+                                            </h5>
+                                        </a>
+                                    </li>
+                                    <li class="children-item ">
+                                        <a class="children-item-inner" href="dashboard.html">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    person_add
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                ایجاد کاربر
+                                            </h5>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+                            <li class="navigation_box-list-item">
+
+                                <a class="navigation_box-list-item-inner have_child" href="#">
+                                    <div class="list-item_icon">
+                                        <i class="material-symbols-rounded">
+                                            description
+                                        </i>
+                                    </div>
+                                    <h5 class="list-item_text ">وبلاگ</h5>
+                                </a>
+
+                                <ul class="navigation_box-list-item-children ">
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner ">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    list_alt
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                لیست نوشته ها
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    post_add
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                ایجاد نوشته
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    category
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                دسته‌بندی ها
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li class="navigation_box-list-item">
+
+                                <a class="navigation_box-list-item-inner have_child" href="#">
+                                    <div class="list-item_icon">
+                                        <i class="material-symbols-rounded">
+                                            package_2
+                                        </i>
+                                    </div>
+                                    <h5 class="list-item_text ">سبد محصولات</h5>
+                                </a>
+
+                                <ul class="navigation_box-list-item-children ">
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner ">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    list_alt
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                لیست سبد محصولات
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    box_add
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                ایجاد سبد محصول
+                                            </h5>
+                                        </a>
+                                    </li>
+
+
+
+                                </ul>
+                            </li>
+
+                            <li class="navigation_box-list-item">
+
+                                <a class="navigation_box-list-item-inner have_child" href="#">
+                                    <div class="list-item_icon">
+                                        <i class="material-symbols-rounded">
+                                            shopping_cart
+                                        </i>
+                                    </div>
+                                    <h5 class="list-item_text ">محصولات</h5>
+                                </a>
+
+                                <ul class="navigation_box-list-item-children ">
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner ">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    list_alt
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                لیست محصولات
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    add_shopping_cart
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                ایجاد محصول
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    category
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                دسته‌بندی ها
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    app_registration
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                نوع مشخصات
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    playlist_add
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                لیست اطلاع از موجودی
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    request_quote
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                قیمت ها
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+
+                                        <a class="children-item-inner have_child">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    gesture
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                برند ها
+                                            </h5>
+                                        </a>
+
+                                        <ul class="children-item_childBox">
+
+                                            <li class="childBox-item">
+                                                <a class="childBox-item-inner">
+                                                    <div class="childBox-item-icon">
+                                                        <i class="material-symbols-rounded">
+                                                            gesture
+                                                        </i>
+                                                    </div>
+                                                    <h5 class="childBox-item-text ">
+                                                        لیست برند ها
+                                                    </h5>
+                                                </a>
+                                            </li>
+
+                                            <li class="childBox-item">
+                                                <a class="childBox-item-inner">
+                                                    <div class="childBox-item-icon">
+                                                        <i class="material-symbols-rounded">
+                                                            gesture
+                                                        </i>
+                                                    </div>
+                                                    <h5 class="childBox-item-text ">
+                                                        ایجاد برند
+                                                    </h5>
+                                                </a>
+                                            </li>
+
+                                        </ul>
+
+                                    </li>
+
+                                    <li class="children-item ">
+
+                                        <a class="children-item-inner have_child">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    featured_play_list
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                ویژگی ها
+                                            </h5>
+                                        </a>
+
+                                        <ul class="children-item_childBox">
+
+                                            <li class="childBox-item">
+                                                <a class="childBox-item-inner">
+                                                    <div class="childBox-item-icon">
+                                                        <i class="material-symbols-rounded">
+                                                            list_alt
+                                                        </i>
+                                                    </div>
+                                                    <h5 class="childBox-item-text ">
+                                                        لیست گروه ویژگی ها
+                                                    </h5>
+                                                </a>
+                                            </li>
+
+                                            <li class="childBox-item">
+                                                <a class="childBox-item-inner">
+                                                    <div class="childBox-item-icon">
+                                                        <i class="material-symbols-rounded">
+                                                            format_list_bulleted_add
+                                                        </i>
+                                                    </div>
+                                                    <h5 class="childBox-item-text ">
+                                                        ایجاد گروه ویژگی
+                                                    </h5>
+                                                </a>
+                                            </li>
+
+                                            <li class="childBox-item">
+                                                <a class="childBox-item-inner">
+                                                    <div class="childBox-item-icon">
+                                                        <i class="material-symbols-rounded">
+                                                            featured_play_list
+                                                        </i>
+                                                    </div>
+                                                    <h5 class="childBox-item-text ">
+                                                        ایجاد ویژگی
+                                                    </h5>
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+
+                                    <li class="children-item ">
+
+                                        <a class="children-item-inner have_child">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    filter_alt
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                فیلتر ها
+                                            </h5>
+                                        </a>
+
+                                        <ul class="children-item_childBox">
+
+                                            <li class="childBox-item">
+                                                <a class="childBox-item-inner">
+                                                    <div class="childBox-item-icon">
+                                                        <i class="material-symbols-rounded">
+                                                            filter_alt
+                                                        </i>
+                                                    </div>
+                                                    <h5 class="childBox-item-text ">
+                                                        لیست فیلتر ها
+                                                    </h5>
+                                                </a>
+                                            </li>
+
+                                            <li class="childBox-item">
+                                                <a class="childBox-item-inner">
+                                                    <div class="childBox-item-icon">
+                                                        <i class="material-symbols-rounded">
+                                                            filter_alt
+                                                        </i>
+                                                    </div>
+                                                    <h5 class="childBox-item-text ">
+                                                        ایجاد فیلتر
+                                                    </h5>
+                                                </a>
+                                            </li>
+
+
+
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li class="navigation_box-list-item">
+
+                                <a class="navigation_box-list-item-inner have_child" href="#">
+                                    <div class="list-item_icon">
+                                        <i class="material-symbols-rounded">
+                                            sell
+                                        </i>
+                                    </div>
+                                    <h5 class="list-item_text ">تخفیف ها</h5>
+                                </a>
+
+                                <ul class="navigation_box-list-item-children ">
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner ">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    category
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                لیست تخفیف ها
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    more
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                ایجاد تخفیف
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li class="navigation_box-list-item">
+
+                                <a class="navigation_box-list-item-inner have_child" href="#">
+                                    <div class="list-item_icon">
+                                        <i class="material-symbols-rounded">
+                                            business_center
+                                        </i>
+                                    </div>
+                                    <h5 class="list-item_text ">سفارشات</h5>
+                                </a>
+
+                                <ul class="navigation_box-list-item-children ">
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner ">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    business_center
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                همه سفارشات
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    work_update
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                سفارشات جدید
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    paid
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                سفارشات پرداخت شده
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    enterprise
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                محصولات منتظر ارسال
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li class="navigation_box-list-item">
+
+                                <a class="navigation_box-list-item-inner have_child" href="#">
+                                    <div class="list-item_icon">
+                                        <i class="material-symbols-rounded">
+                                            package_2
+                                        </i>
+                                    </div>
+                                    <h5 class="list-item_text "> حمل و نقل </h5>
+                                </a>
+
+                                <ul class="navigation_box-list-item-children ">
+
+
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    local_shipping
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                روش های ارسال
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    list_alt
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                لیست استان ها
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    things_to_do
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                ایجاد استان
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    apartment
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                ایجاد شهر
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li class="navigation_box-list-item">
+
+                                <a class="navigation_box-list-item-inner have_child" href="#">
+                                    <div class="list-item_icon">
+                                        <i class="material-symbols-rounded">
+                                            instant_mix
+                                        </i>
+                                    </div>
+                                    <h5 class="list-item_text ">
+                                        اسلایدر ها
+                                    </h5>
+                                </a>
+
+                                <ul class="navigation_box-list-item-children ">
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    format_list_bulleted
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                لیست اسلایدر ها
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    format_list_bulleted_add
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                ایجاد اسلایدر
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                </ul>
+
+                            </li>
+
+                            <li class="navigation_box-list-item">
+                                <a class="navigation_box-list-item-inner have_child" href="#">
+                                    <div class="list-item_icon">
+                                        <i class="material-symbols-rounded">
+                                            planner_banner_ad_pt
+                                        </i>
+                                    </div>
+                                    <h5 class="list-item_text ">
+                                        بنر ها
+                                    </h5>
+                                </a>
+                                <ul class="navigation_box-list-item-children ">
+
+
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    format_list_bulleted
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                لیست بنر ها
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    format_list_bulleted_add
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                ایجاد بنر
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li class="navigation_box-list-item">
+                                <a class="navigation_box-list-item-inner have_child" href="#">
+                                    <div class="list-item_icon">
+                                        <i class="material-symbols-rounded">
+                                            link
+                                        </i>
+                                    </div>
+                                    <h5 class="list-item_text ">
+                                        لینک های فوتر
+                                    </h5>
+                                </a>
+                                <ul class="navigation_box-list-item-children ">
+
+
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    format_list_bulleted
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                لیست لینک ها
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    add_link
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                ایجاد لینک
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    format_list_bulleted
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                لیست گروه ها
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li class="navigation_box-list-item">
+                                <a class="navigation_box-list-item-inner have_child" href="#">
+                                    <div class="list-item_icon">
+                                        <i class="material-symbols-rounded">
+                                            description
+                                        </i>
+                                    </div>
+                                    <h5 class="list-item_text ">
+                                        صفحات
+                                    </h5>
+                                </a>
+                                <ul class="navigation_box-list-item-children ">
+
+
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    format_list_bulleted
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                لیست صفحات
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    post_add
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                ایجاد صفحه
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li class="navigation_box-list-item">
+                                <a class="navigation_box-list-item-inner have_child" href="#">
+                                    <div class="list-item_icon">
+                                        <i class="material-symbols-rounded">
+                                            lock_open
+                                        </i>
+                                    </div>
+                                    <h5 class="list-item_text ">
+                                        مقام ها
+                                    </h5>
+                                </a>
+                                <ul class="navigation_box-list-item-children ">
+
+
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    format_list_bulleted
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                لیست مقام ها
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    enhanced_encryption
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                ایجاد مقام
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li class="navigation_box-list-item">
+                                <a class="navigation_box-list-item-inner have_child" href="#">
+                                    <div class="list-item_icon">
+                                        <i class="material-symbols-rounded">
+                                            data_usage
+                                        </i>
+                                    </div>
+                                    <h5 class="list-item_text ">
+                                        گزارشات
+                                    </h5>
+                                </a>
+                                <ul class="navigation_box-list-item-children ">
+
+
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    business_center
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                سفارشات
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    group
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                کاربران
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    ssid_chart
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                آمار بازدید ها
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    format_list_bulleted
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                لیست بازدیدها
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    bar_chart_4_bars
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                بازدید کنندگان امروز
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    mark_chat_unread
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                لاگ پیامک های ارسالی
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li class="navigation_box-list-item">
+                                <a class="navigation_box-list-item-inner have_child" href="#">
+                                    <div class="list-item_icon">
+                                        <i class="material-symbols-rounded">
+                                            space_dashboard
+                                        </i>
+                                    </div>
+                                    <h5 class="list-item_text ">
+                                        قالب
+                                    </h5>
+                                </a>
+                                <ul class="navigation_box-list-item-children ">
+
+
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    format_list_bulleted
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                لیست قالب ها
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    format_list_bulleted_add
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                افزودن قالب جدید
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    settings_slow_motion
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                تنظیمات قالب
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    display_settings
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                مدیریت صفحه اصلی
+                                            </h5>
+                                        </a>
+                                    </li>
+
+
+                                </ul>
+                            </li>
+
+                            <li class="navigation_box-list-item">
+                                <a class="navigation_box-list-item-inner have_child" href="#">
+                                    <div class="list-item_icon">
+                                        <i class="material-symbols-rounded">
+                                            confirmation_number
+                                        </i>
+                                    </div>
+                                    <h5 class="list-item_text ">
+                                        تیکت ها
+                                    </h5>
+                                </a>
+                                <ul class="navigation_box-list-item-children ">
+
+
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    format_list_bulleted
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                لیست تیکت ها
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    format_list_bulleted_add
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                ایجاد تیکت
+                                            </h5>
+                                        </a>
+                                    </li>
+
+
+                                </ul>
+                            </li>
+
+                            <li class="navigation_box-list-item">
+                                <a class="navigation_box-list-item-inner have_child" href="#">
+                                    <div class="list-item_icon">
+                                        <i class="material-symbols-rounded">
+                                            credit_card
+                                        </i>
+                                    </div>
+                                    <h5 class="list-item_text ">
+                                        پرداخت
+                                    </h5>
+                                </a>
+                                <ul class="navigation_box-list-item-children ">
+
+
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    format_list_bulleted
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                لیست تراکنش ها
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    account_balance_wallet
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                تاریخچه‌ی کیف پول
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    universal_currency_alt
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                لیست ارز ها
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    credit_card_clock
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                اقساط
+                                            </h5>
+                                        </a>
+                                    </li>
+
+
+                                </ul>
+                            </li>
+
+                            <li class="navigation_box-list-item">
+                                <a class="navigation_box-list-item-inner have_child" href="#">
+                                    <div class="list-item_icon">
+                                        <i class="material-symbols-rounded">
+                                            settings
+                                        </i>
+                                    </div>
+                                    <h5 class="list-item_text ">
+                                        تنظیمات
+                                    </h5>
+                                </a>
+                                <ul class="navigation_box-list-item-children ">
+
+
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    info
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                اطلاعات کلی
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    captive_portal
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                شبکه های اجتماعی
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    universal_currency_alt
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                درگاه های پرداخت
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    other_admission
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                تنظیمات دیگر
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    inbox_customize
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                تنظیمات پیامک
+                                            </h5>
+                                        </a>
+                                    </li>
+
+
+                                </ul>
+                            </li>
+
+                            <li class="navigation_box-list-item">
+                                <a class="navigation_box-list-item-inner have_child" href="#">
+                                    <div class="list-item_icon">
+                                        <i class="material-symbols-rounded">
+                                            more_horiz
+                                        </i>
+                                    </div>
+                                    <h5 class="list-item_text ">
+                                        دیگر
+                                    </h5>
+                                </a>
+                                <ul class="navigation_box-list-item-children ">
+
+
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    folder
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                فایل ها
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    desktop_cloud_stack
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                لیست بکاپ ها
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    key_vertical
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                کلید های وب سرویس
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    mark_email_unread
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                اعلان ها
+                                            </h5>
+                                        </a>
+                                    </li>
+
+
+
+
+                                </ul>
+                            </li>
+
+                            <li class="navigation_box-list-item">
+                                <a class="navigation_box-list-item-inner have_child" href="#">
+                                    <div class="list-item_icon">
+                                        <i class="material-symbols-rounded">
+                                            folder_code
+                                        </i>
+                                    </div>
+                                    <h5 class="list-item_text ">
+                                        توسعه دهنده
+                                    </h5>
+                                </a>
+                                <ul class="navigation_box-list-item-children ">
+
+
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    settings_accessibility
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                دسترسی ها
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    developer_board
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                تنظیمات توسعه دهنده
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                    <li class="children-item ">
+                                        <a class="children-item-inner">
+                                            <div class="children-item-icon">
+                                                <i class="material-symbols-rounded">
+                                                    login
+                                                </i>
+                                            </div>
+                                            <h5 class="children-item-text">
+                                                لاگ ها
+                                            </h5>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li class="navigation_box-list-item">
+                                <a class="navigation_box-list-item-inner" href="#">
+                                    <div class="list-item_icon">
+                                        <i class="material-symbols-rounded">
+                                            menu
+                                        </i>
+                                    </div>
+                                    <h5 class="list-item_text ">
+                                        منو ها
+                                    </h5>
+                                </a>
+                            </li>
+
+                            <li class="navigation_box-list-item">
+                                <a class="navigation_box-list-item-inner" href="#">
+                                    <div class="list-item_icon">
+                                        <i class="material-symbols-rounded">
+                                            contact_phone
+                                        </i>
+                                    </div>
+                                    <h5 class="list-item_text ">
+                                        لیست تماس با ما
+                                    </h5>
+                                </a>
+                            </li>
+
+                            <li class="navigation_box-list-item">
+                                <a class="navigation_box-list-item-inner" href="#">
+                                    <div class="list-item_icon">
+                                        <i class="material-symbols-rounded">
+                                            forum
+                                        </i>
+                                    </div>
+                                    <h5 class="list-item_text ">
+                                        نظرات
+                                    </h5>
+                                </a>
+                            </li>
+
+                            <li class="navigation_box-list-item">
+                                <a class="navigation_box-list-item-inner" href="#">
+                                    <div class="list-item_icon">
+                                        <i class="material-symbols-rounded">
+                                            credit_score
+                                        </i>
+                                    </div>
+                                    <h5 class="list-item_text ">
+                                        تسویه حساب ها
+                                    </h5>
+                                </a>
+                            </li>
+
+                            <li class="navigation_box-list-item">
+                                <a class="navigation_box-list-item-inner" href="#">
+                                    <div class="list-item_icon">
+                                        <i class="material-symbols-rounded">
+                                            work
+                                        </i>
+                                    </div>
+                                    <h5 class="list-item_text ">
+                                        فرصت های شغلی
+                                    </h5>
+                                </a>
+                            </li>
+
+                            <li class="navigation_box-list-item">
+                                <a class="navigation_box-list-item-inner" href="#">
+                                    <div class="list-item_icon">
+                                        <i class="material-symbols-rounded">
+                                            location_on
+                                        </i>
+                                    </div>
+                                    <h5 class="list-item_text ">
+                                        درخواست نمایندگی فروش
+                                    </h5>
+                                </a>
+                            </li>
+
+                            <li class="navigation_box-list-item">
+                                <a class="navigation_box-list-item-inner" href="#">
+                                    <div class="list-item_icon">
+                                        <i class="material-symbols-rounded">
+                                            airplay
+                                        </i>
+                                    </div>
+                                    <h5 class="list-item_text ">
+                                        درخواست های دمو آنلاین
+                                    </h5>
+                                </a>
+                            </li>
+
+                            <li class="navigation_box-list-item">
+                                <a class="navigation_box-list-item-inner" href="#">
+                                    <div class="list-item_icon">
+                                        <i class="material-symbols-rounded">
+                                            lab_profile
+                                        </i>
+                                    </div>
+                                    <h5 class="list-item_text ">
+                                        مشاهده فرم های خرید
+                                    </h5>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="nav_botom_box padding_inline_updates ">
+
+                        <div class="contact_support">
+
+                            <a class="contact_support-box">
+
+                                <div class="contact_support-icon">
+                                    <i class="ri-customer-service-line"></i>
+                                </div>
+
+                                <div class="contact_support-text ">
+                                    ارتباط با پشتیبانی
+                                </div>
+
+                            </a>
+
+                        </div>
+
+                        <div class="logout_button ">
+
+                            <a class="logout_button-box">
+                                <div class="logout_button-icon">
+                                    <div class="logout_button-icon-background">
+                                    </div>
+                                    <div class="logout_button-icon-arrow">
+                                        <i class="material-symbols-rounded">
+                                            keyboard_backspace
+                                        </i>
+                                    </div>
+                                </div>
+                                <h3 class="logout_button-text ">
+                                    خروج
+                                </h3>
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </nav>
+
+        </div>
+    </header>
+    <main id="main" class="main_wrapper main_update d-flex align-items-center justify-content-start flex-column">
+        <nav class="main_wrapper_header">
+
+
+            <div class="main_wrapper_header_top">
+
+                <h2 class="main_wrapper_header_top-title">
+                    داشبورد
+                </h2>
+
+                <div class="main_wrapper_header_top-box">
+
+                    <img src="/media/Picsart_24-12-11_18-05-06-207.jpg" alt="" class="main_wrapper_header_top-box-img">
+
+                    <button class="btn main_wrapper_header_top-box-notify">
+                        <i class="material-symbols-rounded">
+                            notifications
+                        </i>
+                    </button>
+
+                    <button class="btn main_wrapper_header_top-box-name">
+                        <p class="btn main_wrapper_header_top-box-name-text">
+                            آروین دیاکو
+                        </p>
+                        <i class="ri-arrow-down-s-line"></i>
+                    </button>
+
+
+
+                </div>
+
+
+
+            </div>
+
+            <div class="main_wrapper_header_bottom">
+
+                <div class="mobile_menu_opennig d-md-none btn">
+                    <i class="material-symbols-rounded  menu_close">
+                        menu_open
+                    </i>
+                </div>
+
+                <div class="main_wrapper_header_bottom-breadCrumbs">
+                    <a class="main_wrapper_header_bottom-breadCrumbs-icon">
+                        <i class="material-symbols-rounded">
+                            home
+                        </i>
+                    </a>
+                    <a class="main_wrapper_header_bottom-breadCrumbs-text">
+                        سفارشات /
+                    </a>
+                    <a class="main_wrapper_header_bottom-breadCrumbs-text">
+                        سفارش /
+                    </a>
+
+
+                </div>
+
+            </div>
+
+
+        </nav>
+
+        <div class="main_wrapper_body">
+            <div class="main_wrapper_body-inner w-100">
+                <div class="main_wrapper_body-inner-top w-100 d-flex align-items-center justify-content-between ">
+                    <h4 class="main_wrapper_body-inner-top-title ">
+                        چکیده سفارشات
+                    </h4>
+                    <a class="create_order_button btn">
+                        ساخت سفارش جدید
+                        <i class="material-symbols-rounded">
+                            add
+                        </i>
+                    </a>
+                </div>
+                <div class="main_wrapper_body-inner-bottom w-100">
+                    <div class="col-12">
+
+                        <div class="row w-100 m-0 p-0 row-gap-3">
+
+                            <div class="col-12 col-xl-3 order-2 order-xl-0 px-0 pe-xl-2">
+                                <div class="costumers_box w-100">
+                                    <div class="costumers_box_inner">
+                                        <div class="costumers_box_inner_top">
+
+                                            <div class="elegant-select ">
+
+                                                <select class="native-select" aria-hidden="true">
+                                                    <option value="">بازه زمانی</option>
+                                                    <option value="1">هفته گذشته</option>
+                                                    <option value="2">15 روز گذشته</option>
+                                                    <option value="3">ماه گذشته</option>
+                                                    <option value="4">3ماه گذشته</option>
+                                                </select>
+
+                                                <div class="custom-select rounded-2">
+                                                    <div class="selected-value">بازه زمانی</div>
+                                                    <div class="options-container">
+                                                        <div class="option" data-value="">بازه زمانی</div>
+                                                        <div class="option" data-value="1">هفته گذشته</div>
+                                                        <div class="option" data-value="2">15 روز گذشته</div>
+                                                        <div class="option" data-value="3">ماه گذشته</div>
+                                                        <div class="option" data-value="4">3ماه گذشته</div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <a href="#" class="box_header_icon box_header_icon-1">
+                                                <i class="material-symbols-rounded">
+                                                    shopping_cart
+                                                </i>
+                                            </a>
+
+                                        </div>
+                                        <div class="costumers_box_inner_bottom">
+
+
+                                            <div class="data_box">
+                                                <h4 class="data_box_title">
+                                                    مشتریان
+                                                </h4>
+                                                <div class="data_box_status">
+                                                    600
+                                                    <div class="data_box_status-percentage">
+                                                        10%+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="data_box">
+                                                <h4 class="data_box_title">
+                                                    سبد خرید رها شده
+                                                </h4>
+                                                <div class="data_box_status">
+                                                    110
+                                                    <div class="data_box_status-percentage">
+                                                        10%+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-xl-9 order-1 order-xl-0 px-0 ps-xl-2">
+                                <div class="row w-100 p-0 m-0 row-gap-3">
+
+                                    <div class="col-12 col-lg-6 px-0 pe-lg-2">
+
+                                        <div class="costumers_box w-100">
+                                            <div class="costumers_box_inner">
+
+                                                <div class="costumers_box_inner_top">
+
+                                                    <div class="elegant-select ">
+
+                                                        <select class="native-select" aria-hidden="true">
+                                                            <option value="">بازه زمانی</option>
+                                                            <option value="1">هفته گذشته</option>
+                                                            <option value="2">15 روز گذشته</option>
+                                                            <option value="3">ماه گذشته</option>
+                                                            <option value="4">3ماه گذشته</option>
+                                                        </select>
+
+                                                        <div class="custom-select rounded-2">
+                                                            <div class="selected-value">بازه زمانی</div>
+                                                            <div class="options-container">
+                                                                <div class="option" data-value="">بازه زمانی</div>
+                                                                <div class="option" data-value="1">هفته گذشته</div>
+                                                                <div class="option" data-value="2">15 روز گذشته</div>
+                                                                <div class="option" data-value="3">ماه گذشته</div>
+                                                                <div class="option" data-value="4">3ماه گذشته</div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <a href="#" class="box_header_icon box_header_icon-1">
+                                                        <i class="material-symbols-rounded">
+                                                            shopping_bag
+                                                        </i>
+                                                    </a>
+
+                                                </div>
+                                                <div class="costumers_box_inner_bottom">
+
+
+                                                    <div class="data_box">
+                                                        <h4 class="data_box_title">
+                                                            لغو شده
+                                                        </h4>
+                                                        <div class="data_box_status">
+                                                            600
+                                                            <div class="data_box_status-percentage">
+                                                                10%+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="data_box">
+                                                        <h4 class="data_box_title">
+                                                            برگشت خورده
+                                                        </h4>
+                                                        <div class="data_box_status">
+                                                            110
+                                                            <div class="data_box_status-percentage">
+                                                                10%+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="data_box">
+                                                        <h4 class="data_box_title">
+                                                            آسیب دیده
+                                                        </h4>
+                                                        <div class="data_box_status">
+                                                            110
+                                                            <div class="data_box_status-percentage">
+                                                                10%+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-12 col-lg-6 px-0 ps-lg-2">
+
+                                        <div class="costumers_box w-100">
+                                            <div class="costumers_box_inner">
+
+                                                <div class="costumers_box_inner_top">
+
+                                                    <div class="elegant-select ">
+
+                                                        <select class="native-select" aria-hidden="true">
+                                                            <option value="">بازه زمانی</option>
+                                                            <option value="1">هفته گذشته</option>
+                                                            <option value="2">15 روز گذشته</option>
+                                                            <option value="3">ماه گذشته</option>
+                                                            <option value="4">3ماه گذشته</option>
+                                                        </select>
+
+                                                        <div class="custom-select rounded-2">
+                                                            <div class="selected-value">بازه زمانی</div>
+                                                            <div class="options-container">
+                                                                <div class="option" data-value="">بازه زمانی</div>
+                                                                <div class="option" data-value="1">هفته گذشته</div>
+                                                                <div class="option" data-value="2">15 روز گذشته</div>
+                                                                <div class="option" data-value="3">ماه گذشته</div>
+                                                                <div class="option" data-value="4">3ماه گذشته</div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <a href="#" class="box_header_icon box_header_icon-1">
+                                                        <i class="material-symbols-rounded">
+                                                            shopping_bag
+                                                        </i>
+                                                    </a>
+
+                                                </div>
+
+                                                <div class="costumers_box_inner_bottom">
+
+
+                                                    <div class="data_box">
+                                                        <h4 class="data_box_title">
+                                                            سفارشات
+                                                        </h4>
+                                                        <div class="data_box_status">
+                                                            600
+                                                            <div class="data_box_status-percentage">
+                                                                10%+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="data_box">
+                                                        <h4 class="data_box_title">
+                                                            در انتظار
+                                                        </h4>
+                                                        <div class="data_box_status">
+                                                            600
+                                                            <div class="data_box_status-percentage-down">
+                                                                10%+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="data_box">
+                                                        <h4 class="data_box_title">
+                                                            تکمیل شده
+                                                        </h4>
+                                                        <div class="data_box_status">
+                                                            110
+                                                            <div class="data_box_status-percentage">
+                                                                10%+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-12 px-0 order-3">
+
+                                <div class="orders_functional_box">
+
+                                    <div class="orders_functional_box_inner">
+
+
+                                        <div class="orders_functional_box_inner-top">
+
+
+                                            <h3 class="orders_functional_box_inner-top-title">
+                                                سفارشات مشتریان
+                                            </h3>
+
+                                            <div class="orders_functional_box_inner-top-filtersBox">
+
+                                                <div class="btn open_filters_box_btn d-flex d-lg-none">
+
+                                                    <i class="material-symbols-rounded">
+                                                        tune
+                                                    </i>
+
+                                                </div>
+
+                                                <div
+                                                    class="orders_functional_box_inner-top-filtersBox-filters filters_display ">
+
+                                                    <div class="orders_search_container">
+                                                        <input type="text" class="orders_search_container-search-input"
+                                                            placeholder="جستجو سفارش...">
+                                                        <button class="orders_search_container-search-button">
+                                                            <i class="material-symbols-outlined">
+                                                                search
+                                                            </i>
+                                                        </button>
+                                                    </div>
+
+                                                    <button class="filter_btn btn">
+                                                        فیلتر
+                                                        <div class="filter_btn-icon">
+                                                            <i class="material-symbols-rounded">
+                                                                filter_alt
+                                                            </i>
+                                                        </div>
+                                                    </button>
+
+                                                    <button class="filter_btn btn filter_btn-date" id="filter_btn_date">
+                                                        فیلتر
+                                                        <div class="filter_btn-icon">
+                                                            <i class="material-symbols-rounded">
+                                                                calendar_month
+                                                            </i>
+                                                        </div>
+                                                    </button>
+
+                                                    <div class="elegant-select bulk_action_btn">
+
+                                                        <select class="native-select" aria-hidden="true">
+                                                            <option value="">عملیات گروهی</option>
+                                                            <option value="1">حذف</option>
+                                                            <option value="2">تکمیل سفارش</option>
+                                                            <option value="3">لغو سفارش</option>
+
+                                                        </select>
+
+                                                        <div class="custom-select rounded-2">
+                                                            <div class="selected-value">عملیات گروهی</div>
+                                                            <div class="options-container">
+                                                                <div class="option" data-value="">عملیات گروهی</div>
+                                                                <div class="option" data-value="1">حذف</div>
+                                                                <div class="option" data-value="2">تکمیل سفارش</div>
+                                                                <div class="option" data-value="3">لغو سفارش</div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+
+                                        </div>
+
+                                        <div class="orders_functional_box_inner-bottom"></div>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </main>
+
+    <div class="date-picker-modal" id="datePickerModal">
+
+        <div class="modal_backdrop"></div>
+
+        <div class="date-picker-wrapper">
+            <!-- Modal Header -->
+
+            <div class="modal-header">
+
+                <div class="header-content">
+
+                    <div class="header-icon">
+
+                        <i class="fas fa-calendar-alt"></i>
+
+                    </div>
+
+                    <div class="header-text">
+
+                        <h1 class="header-title">انتخاب بازه تاریخ</h1>
+
+                        <p class="header-subtitle">تاریخ شروع و پایان دوره مورد نظر را انتخاب کنید</p>
+
+                    </div>
+
+                </div>
+
+                <button class="close-modal-btn" id="closeModalBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+
+            </div>
+
+            <!-- Date Selection Cards -->
+            <div class="date-cards-container">
+
+                <!-- Start Date Card -->
+                <div class="date-card start-date-card">
+
+                    <div class="card-header">
+
+                        <i class="fas fa-play-circle"></i>
+                        <span>تاریخ شروع (حداکثر دیروز)</span>
+
+                    </div>
+
+                    <button class="date-button" id="startDateBtn">
+                        <div class="date-display">
+                            <span class="date-text" id="startDateText">انتخاب تاریخ شروع</span>
+                            <i class="fas fa-calendar-plus"></i>
+                        </div>
+                    </button>
+                    <button class="individual-reset" id="resetStartBtn">
+                        <i class="fas fa-undo"></i>
+                        <span>پاک کردن</span>
+                    </button>
+                </div>
+
+                <!-- End Date Card -->
+                <div class="date-card end-date-card">
+                    <div class="card-header">
+                        <i class="fas fa-stop-circle"></i>
+                        <span>تاریخ پایان (حداکثر امروز)</span>
+                    </div>
+                    <button class="date-button" id="endDateBtn">
+                        <div class="date-display">
+                            <span class="date-text" id="endDateText">انتخاب تاریخ پایان</span>
+                            <i class="fas fa-calendar-plus"></i>
+                        </div>
+                    </button>
+                    <button class="individual-reset" id="resetEndBtn">
+                        <i class="fas fa-undo"></i>
+                        <span>پاک کردن</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Selected Range Display -->
+            <div class="selected-range" id="selectedRange" style="display: none;">
+                <div class="range-header">
+                    <i class="fas fa-clock"></i>
+                    <span>بازه انتخاب شده</span>
+                </div>
+                <div class="range-content">
+                    <div class="range-item start-range">
+                        <span class="range-label">از تاریخ:</span>
+                        <span class="range-value" id="selectedStartDate"></span>
+                    </div>
+                    <div class="range-separator">
+                        <i class="fas fa-arrow-left"></i>
+                    </div>
+                    <div class="range-item end-range">
+                        <span class="range-label">تا تاریخ:</span>
+                        <span class="range-value" id="selectedEndDate"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Actions -->
+            <div class="modal-actions">
+                <button class="action-btn reset-all-btn" id="globalResetBtn">
+                    <i class="fas fa-refresh"></i>
+                    <span>پاک کردن همه</span>
+                </button>
+                <button class="action-btn confirm-btn" id="confirmBtn">
+                    <i class="fas fa-check"></i>
+                    <span>تایید انتخاب</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Calendar Modal -->
+        <div class="calendar_modal" id="calendarModal">
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <button class="calendar-nav-btn" id="prevMonth">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="calendar-title" id="calendarTitle">
+                        <span id="currentMonth"></span>
+                        <span id="currentYear"></span>
+                    </div>
+                    <button class="calendar-nav-btn" id="nextMonth">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                </div>
+
+                <!-- Month Selector -->
+                <div class="month-selector" id="monthSelector">
+                    <div class="month-selector-header">
+                        <div class="month-selector-title">انتخاب ماه</div>
+                    </div>
+                    <div class="month-selector-grid" id="monthGrid"></div>
+                </div>
+
+                <!-- Year Selector -->
+                <div class="year-selector" id="yearSelector">
+                    <div class="year-selector-header">
+                        <button class="calendar-nav-btn" id="prevYearPage">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <div class="year-selector-title" id="yearRangeDisplay"></div>
+                        <button class="calendar-nav-btn" id="nextYearPage">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                    </div>
+                    <div class="year-selector-grid" id="yearGrid"></div>
+                </div>
+
+                <div class="calendar-weekdays">
+                    <div class="weekday">ش</div>
+                    <div class="weekday">ی</div>
+                    <div class="weekday">د</div>
+                    <div class="weekday">س</div>
+                    <div class="weekday">چ</div>
+                    <div class="weekday">پ</div>
+                    <div class="weekday">ج</div>
+                </div>
+
+                <div class="calendar-days" id="calendarDays"></div>
+
+                <div class="calendar-actions">
+                    <button class="calendar-reset-btn" id="calendarResetBtn">
+                        <i class="fas fa-times"></i>
+                        <span>پاک کردن</span>
+                    </button>
+                    <button class="calendar-close-btn" id="calendarCloseBtn">
+                        <i class="fas fa-check"></i>
+                        <span>تایید</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="toaster-container" id="toasterContainer"></div>
+
+
+
+    <script src="/bootstrap-5.3.5/dist/js/bootstrap.bundle.js"></script>
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script src="/js/index.min.js"></script>
+    <script src="/js/jalaali.js"></script>
+    <script src="/js/date-pickers.js"></script>
+    <script src="/js/chart.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

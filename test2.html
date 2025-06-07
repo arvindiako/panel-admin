@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Marketing Donut Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            background: #F7F8FA;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .card {
+            background: white;
+            width: 360px;
+            padding: 24px;
+            border-radius: 20px;
+            margin: 40px auto;
+            box-sizing: border-box;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .card-header h3 {
+            font-size: 18px;
+            margin: 0;
+            color: #131313;
+        }
+
+        .card-header span {
+            font-size: 13px;
+            color: #8B8D97;
+        }
+
+        .legend {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #1C1C1C;
+        }
+
+        .legend-color {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+
+        canvas {
+            display: block;
+            margin: auto;
+            max-width: 205px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="card-header">
+            <h3>Marketing</h3>
+            <span>This week</span>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #5570F1;"></div>Acquisition
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #97A5EB;"></div>Purchase
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #FFCC91;"></div>Retention
+            </div>
+        </div>
+
+        <canvas id="marketingChart"></canvas>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('marketingChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['ممد', 'محسن', 'علی'],
+                datasets: [
+                    // Background Ring (gray full ring - same thickness as colored)
+                    {
+                        data: [100],
+                        backgroundColor: ['#EEF0FA'],
+                        borderWidth: 0,
+                        cutout: '50%',
+                        circumference: 360,
+                        rotation: 0,
+                        weight: 1 // Changed weight to 1
+                    },
+                    // Foreground Ring (actual data)
+                    {
+                        data: [50, 30, 20],
+                        backgroundColor: ['#5570F1', '#97A5EB', '#FFCC91'],
+                        borderWidth: 0,
+                        cutout: '50%',
+                        circumference: 360,
+                        rotation: 0,
+                        weight: 1.3
+                    },
+                    {
+                        data: [50, 30, 20],
+                        backgroundColor: ['#EEF0FA'],
+                        borderWidth: 0,
+                        cutout: '50%',
+                        circumference: 360,
+                        rotation: 0,
+                        weight: 0.9
+                    }
+                    // Removed the third unnecessary gray dataset
+                ]
+            },
+            options: {
+                cutout: '50%',
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        enabled: true
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

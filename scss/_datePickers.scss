@@ -1,0 +1,1288 @@
+//// ==== MIXINS ==== ////
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin glass-effect {
+    background: rgba($white-color, 0.75);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba($white-color, 0.5);
+}
+
+@mixin button-hover-effect {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent
+        );
+        transition: left 0.5s ease;
+    }
+
+    &:hover::before {
+        left: 100%;
+    }
+}
+
+@mixin gradient-text($color1, $color2) {
+    background: linear-gradient(135deg, $color1, $color2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@mixin slide-animation {
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba($primary-color, 1),
+            transparent
+        );
+        transform: translateX(-100%);
+        transition: transform 0.6s ease;
+    }
+
+    &:hover::before {
+        transform: translateX(100%);
+    }
+}
+
+// ===== ANIMATIONS =====
+@keyframes backgroundFloat {
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+        transform: translateY(-20px) rotate(1deg);
+    }
+    66% {
+        transform: translateY(10px) rotate(-1deg);
+    }
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes iconFloat {
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes toasterProgress {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0%;
+    }
+}
+
+.open-modal-btn {
+    background: linear-gradient(
+        135deg,
+        rgba($primary-color, 1),
+        rgba($secondary-color, 1)
+    );
+    color: rgba($white-color, 1);
+    border: none;
+    border-radius: 1.5rem;
+    padding: 1.5rem 3rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    @include button-hover-effect;
+
+    &:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    }
+
+    &:active {
+        transform: translateY(-2px) scale(1.02);
+    }
+
+    i {
+        font-size: 1.5rem;
+    }
+}
+
+// ===== SELECTED DATES DISPLAY =====
+.selected-dates-display {
+    @include glass-effect;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    margin-top: 3rem;
+    animation: slideInUp 0.5s ease-out;
+
+    .dates-header {
+        @include flex-center;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: rgba($black-color, 1);
+
+        i {
+            color: rgba($green-color, 0.9);
+            font-size: 1.5rem;
+        }
+    }
+
+    .dates-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .date-item {
+        text-align: center;
+        padding: 1rem;
+        background: rgba($white-color, 1);
+        border-radius: 1rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+        .date-label {
+            display: block;
+            font-size: 0.9rem;
+            color: rgba($black-color, 1);
+            opacity: 0.7;
+            margin-bottom: 0.5rem;
+        }
+
+        .date-value {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: rgba($primary-color, 1);
+        }
+    }
+}
+
+// ===== MODAL STYLES =====
+.date-picker-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    @media screen and (max-width: 768px) {
+        padding: 0 !important;
+    }
+
+    &.show {
+        display: flex;
+        animation: fadeIn 0.3s ease;
+    }
+
+    .modal_backdrop {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(10px);
+        z-index: 50;
+    }
+}
+
+.date-picker-wrapper {
+    @include glass-effect;
+    backdrop-filter: blur(20px);
+    border-radius: 2rem;
+    padding: 3rem 2rem;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1001;
+    animation: modalSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    row-gap: 2rem;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        width: 50%;
+        height: 50%;
+        background: conic-gradient(
+            from 0deg,
+            transparent,
+            rgba(85, 112, 241, 0.1),
+            transparent,
+            rgba(255, 204, 145, 0.15),
+            transparent
+        );
+        animation: rotate 30s linear infinite;
+        z-index: -1;
+    }
+}
+
+// ===== MODAL HEADER =====
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    .header-content {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+
+        .header-icon {
+            @include flex-center;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(
+                135deg,
+                rgba($primary-color, 1),
+                rgba($secondary-color, 1)
+            );
+            border-radius: 50%;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            animation: iconFloat 3s ease-in-out infinite;
+
+            i {
+                font-size: 2rem;
+                color: rgba($white-color, 1);
+            }
+        }
+
+        .header-text {
+            .header-title {
+                font-size: 2.5rem;
+                font-weight: 700;
+                @include gradient-text(
+                    rgba($primary-color, 1),
+                    rgba($secondary-color, 1)
+                );
+                margin-bottom: 0.5rem;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                line-height: unset;
+            }
+
+            .header-subtitle {
+                color: rgba($black-color, 1);
+                font-size: 1.1rem;
+                opacity: 0.8;
+                margin: 0;
+            }
+        }
+    }
+
+    .close-modal-btn {
+        background: rgba($red-color, 0.12);
+        border: 2px solid rgba(204, 95, 95, 0.2);
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        @include flex-center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: rgba($red-color, 0.9);
+
+        &:hover {
+            background: rgba($red-color, 0.9);
+            color: rgba($white-color, 1);
+            transform: scale(1.1);
+        }
+
+        i {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+// ===== DATE CARDS =====
+.date-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+
+.date-card {
+    @include glass-effect;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    @include slide-animation;
+
+    &:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: rgba($black-color, 1);
+
+        i {
+            font-size: 1.2rem;
+        }
+    }
+
+    .date-button {
+        width: 100%;
+        background: linear-gradient(
+            135deg,
+            rgba($white-color, 1),
+            rgba(255, 255, 255, 0.8)
+        );
+        border: 2px solid rgba($white-color, 0.5);
+        border-radius: 1rem;
+        padding: 1rem 1.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 1rem;
+        @include button-hover-effect;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-color: rgba($primary-color, 0.4);
+
+            i {
+                transform: scale(1.2) rotate(10deg);
+            }
+        }
+
+        .date-display {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .date-text {
+                font-size: 1.1rem;
+                font-weight: 500;
+                color: rgba($black-color, 1);
+            }
+
+            i {
+                font-size: 1.3rem;
+                color: rgba($primary-color, 1);
+                transition: transform 0.3s ease;
+            }
+        }
+    }
+
+    .individual-reset {
+        width: 100%;
+        background: linear-gradient(
+            135deg,
+            rgba($red-color, 0.12),
+            rgba(204, 95, 95, 0.05)
+        );
+        border: 2px solid rgba(204, 95, 95, 0.2);
+        border-radius: 0.75rem;
+        padding: 0.75rem 1rem;
+        color: rgba($red-color, 0.9);
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        @include flex-center;
+        gap: 0.5rem;
+
+        &:hover {
+            background: rgba($red-color, 0.9);
+            color: rgba($white-color, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(204, 95, 95, 0.3);
+        }
+    }
+
+    // Start Date Card Specific Styles
+    &.start-date-card {
+        .card-header i {
+            color: rgba($primary-color, 1);
+        }
+
+        &::before {
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba($primary-color, 1),
+                transparent
+            );
+        }
+    }
+
+    // End Date Card Specific Styles
+    &.end-date-card {
+        .card-header i {
+            color: rgba($secondary-color, 1);
+        }
+
+        &::before {
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba($secondary-color, 1),
+                transparent
+            );
+        }
+
+        .date-button {
+            &:hover {
+                border-color: rgba($secondary-color, 0.5);
+            }
+
+            i {
+                color: rgba($secondary-color, 1);
+            }
+        }
+    }
+}
+
+// ===== SELECTED RANGE =====
+.selected-range {
+    background: linear-gradient(
+        135deg,
+        rgba($primary-color, 0.15),
+        rgba($secondary-color, 0.2)
+    );
+    border: 2px solid rgba($white-color, 0.5);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    animation: slideInUp 0.5s ease-out;
+    width: 100%;
+
+    .range-header {
+        @include flex-center;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: rgba($black-color, 1);
+
+        i {
+            color: rgba($primary-color, 1);
+        }
+    }
+
+    .range-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        .range-item {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+
+            .range-label {
+                display: block;
+                font-size: 0.9rem;
+                color: rgba($black-color, 1);
+                opacity: 0.7;
+                margin-bottom: 0.5rem;
+            }
+
+            .range-value {
+                display: block;
+                font-size: 1.2rem;
+                font-weight: 600;
+                color: rgba($black-color, 1);
+            }
+        }
+
+        .range-separator {
+            @include flex-center;
+
+            i {
+                font-size: 1.5rem;
+                color: rgba($primary-color, 1);
+                animation: pulse 2s infinite;
+            }
+        }
+    }
+}
+
+// ===== MODAL ACTIONS =====
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.action-btn {
+    flex: 1;
+    min-width: 200px;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    @include flex-center;
+    gap: 0.75rem;
+    @include button-hover-effect;
+
+    &:hover {
+        transform: translateY(-3px) scale(1.05);
+    }
+
+    &:active {
+        transform: translateY(-1px) scale(1.02);
+    }
+
+    &.reset-all-btn {
+        background: linear-gradient(
+            135deg,
+            rgba($red-color, 0.9),
+            rgba(204, 95, 95, 0.8)
+        );
+        color: rgba($white-color, 1);
+        box-shadow: 0 10px 25px rgba(204, 95, 95, 0.3);
+
+        &:hover {
+            box-shadow: 0 15px 35px rgba(204, 95, 95, 0.4);
+        }
+    }
+
+    &.confirm-btn {
+        background: linear-gradient(
+            135deg,
+            rgba($green-color, 0.9),
+            rgba(81, 156, 102, 0.8)
+        );
+        color: rgba($white-color, 1);
+        box-shadow: 0 10px 25px rgba(81, 156, 102, 0.3);
+
+        &:hover {
+            box-shadow: 0 15px 35px rgba(81, 156, 102, 0.4);
+        }
+    }
+}
+
+// ===== CALENDAR MODAL =====
+.calendar_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1002;
+    animation: fadeIn 0.3s ease;
+
+    &.show {
+        display: flex;
+    }
+}
+
+.calendar-container {
+    background: rgba($white-color, 1);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    animation: scaleIn 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+            90deg,
+            rgba($primary-color, 1),
+            rgba($secondary-color, 1)
+        );
+    }
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    .calendar-nav-btn {
+        background: rgba($primary-color, 0.15);
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        @include flex-center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background: rgba($primary-color, 0.4);
+            transform: scale(1.1);
+        }
+
+        i {
+            color: rgba($primary-color, 1);
+        }
+    }
+
+    .calendar-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: rgba($black-color, 1);
+        display: flex;
+        gap: 0.5rem;
+
+        span {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.5rem;
+
+            &:hover {
+                color: rgba($primary-color, 1);
+                background: rgba($primary-color, 0.15);
+            }
+        }
+    }
+}
+
+// ===== MONTH SELECTOR =====
+.month-selector {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+
+    &.show {
+        display: flex;
+    }
+
+    .month-selector-header {
+        @include flex-center;
+        margin-bottom: 1rem;
+
+        .month-selector-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: rgba($black-color, 1);
+        }
+    }
+
+    .month-selector-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+
+        .month-item {
+            padding: 0.75rem 0.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+
+            &:hover {
+                background: rgba($secondary-color, 0.2);
+                transform: scale(1.05);
+            }
+
+            &.selected {
+                background: rgba($secondary-color, 1);
+                color: rgba($white-color, 1);
+            }
+        }
+    }
+}
+
+// ===== YEAR SELECTOR =====
+.year-selector {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+
+    &.show {
+        display: flex;
+    }
+
+    .year-selector-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+        .calendar-nav-btn {
+            background: rgba($primary-color, 0.15);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            @include flex-center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background: rgba($primary-color, 0.4);
+                transform: scale(1.1);
+            }
+
+            i {
+                color: rgba($primary-color, 1);
+            }
+        }
+
+        .year-selector-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: rgba($black-color, 1);
+        }
+    }
+
+    .year-selector-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+
+        .year-item {
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+
+            &:hover {
+                background: rgba($primary-color, 0.15);
+                transform: scale(1.05);
+            }
+
+            &.selected {
+                background: rgba($primary-color, 1);
+                color: rgba($white-color, 1);
+            }
+        }
+    }
+}
+
+// ===== CALENDAR GRID =====
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+
+    .weekday {
+        text-align: center;
+        font-weight: 600;
+        color: rgba($black-color, 1);
+        opacity: 0.7;
+        padding: 0.5rem;
+    }
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.25rem;
+    margin-bottom: 1.5rem;
+
+    .calendar-day {
+        aspect-ratio: 1;
+        @include flex-center;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-weight: 500;
+
+        &:hover:not(.disabled):not(.other-month) {
+            background: rgba($primary-color, 0.15);
+            transform: scale(1.1);
+        }
+
+        &.selected {
+            background: rgba($primary-color, 1);
+            color: rgba($white-color, 1);
+        }
+
+        &.today {
+            background: rgba($secondary-color, 0.5);
+            color: rgba($black-color, 1);
+        }
+
+        &.other-month {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        &.disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            background: rgba($black-color, 0.23);
+        }
+    }
+}
+
+// ===== CALENDAR ACTIONS =====
+.calendar-actions {
+    display: flex;
+    gap: 1rem;
+
+    .calendar-reset-btn,
+    .calendar-close-btn {
+        flex: 1;
+        padding: 0.75rem;
+        border: none;
+        border-radius: 0.75rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        @include flex-center;
+        gap: 0.5rem;
+    }
+
+    .calendar-reset-btn {
+        background: rgba($red-color, 0.12);
+        color: rgba($red-color, 0.9);
+
+        &:hover {
+            background: rgba($red-color, 0.9);
+            color: rgba($white-color, 1);
+        }
+    }
+
+    .calendar-close-btn {
+        background: rgba($primary-color, 1);
+        color: rgba($white-color, 1);
+
+        &:hover {
+            background: rgba($primary-color, 0.4);
+            transform: translateY(-2px);
+        }
+    }
+}
+
+// ===== NOTIFICATION =====
+.toaster-container {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+    pointer-events: none;
+
+    @media (max-width: 768px) {
+        top: 1.3rem;
+        right: 1rem;
+        left: 1rem;
+        max-width: none;
+    }
+}
+
+.toaster-notification {
+    background: rgba($white-color, 0.75);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba($white-color, 0.5);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    transform: translateX(100%);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: auto;
+    position: relative;
+    overflow: hidden;
+    min-width: 300px;
+
+    @media (max-width: 768px) {
+        transform: translateY(-100%);
+        min-width: auto;
+
+        &.show {
+            transform: translateY(0);
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+            90deg,
+            rgba($primary-color, 1),
+            rgba($secondary-color, 1)
+        );
+    }
+
+    &.show {
+        transform: translateX(0);
+    }
+
+    // Notification type modifiers
+    &.success {
+        &::before {
+            background: linear-gradient(
+                90deg,
+                rgba($green-color, 0.9),
+                rgba($secondary-color, 1)
+            );
+        }
+
+        .toaster-title i {
+            color: rgba($green-color, 0.9);
+        }
+
+        .toaster-progress {
+            background: rgba($green-color, 0.9);
+        }
+    }
+
+    &.error {
+        &::before {
+            background: linear-gradient(
+                90deg,
+                rgba($red-color, 0.9),
+                rgba(204, 95, 95, 0.6)
+            );
+        }
+
+        .toaster-title i {
+            color: rgba($red-color, 0.9);
+        }
+
+        .toaster-progress {
+            background: rgba($red-color, 0.9);
+        }
+    }
+
+    &.info {
+        &::before {
+            background: linear-gradient(
+                90deg,
+                rgba($primary-color, 1),
+                rgba($secondary-color, 1)
+            );
+        }
+
+        .toaster-title i {
+            color: rgba($primary-color, 1);
+        }
+
+        .toaster-progress {
+            background: rgba($primary-color, 1);
+        }
+    }
+
+    // Extended duration modifier
+    &.extended .toaster-progress {
+        animation-duration: 6s;
+    }
+
+    // Progress bar animation
+    .toaster-progress {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        border-radius: 0 0 1.5rem 1.5rem;
+        animation: toasterProgress 4s linear forwards;
+    }
+}
+
+.toaster-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.toaster-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgba($black-color, 1);
+
+    i {
+        font-size: 1.3rem;
+    }
+}
+
+.toaster-close {
+    background: rgba($red-color, 0.12);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    @include flex-center();
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: rgba($red-color, 0.9);
+
+    &:hover {
+        background: rgba($red-color, 0.9);
+        color: rgba($white-color, 1);
+        transform: scale(1.1);
+    }
+}
+
+.toaster-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.toaster-message {
+    font-size: 1rem;
+    color: rgba($black-color, 1);
+    line-height: 1.5;
+}
+
+.toaster-date-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background: rgba($white-color, 1);
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.toaster-date-label {
+    font-size: 0.9rem;
+    color: rgba($black-color, 1);
+    opacity: 0.7;
+    font-weight: 500;
+}
+
+.toaster-date-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba($primary-color, 1);
+}
+
+// ===== RESPONSIVE DESIGN =====
+@media (max-width: 768px) {
+    .demo-content .demo-title {
+        font-size: 2.5rem;
+    }
+
+    .date-picker-wrapper {
+        padding: 2rem;
+        margin: 0.5rem;
+        height: 95%;
+    }
+
+    .modal-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+
+        .header-content {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .close-modal-btn {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+        }
+    }
+
+    .date-cards-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .range-content {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+
+        .range-separator {
+            transform: rotate(-90deg);
+        }
+    }
+
+    .modal-actions {
+        flex-direction: column;
+
+        .action-btn {
+            min-width: auto;
+        }
+    }
+
+    .calendar-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .notification {
+        top: 1rem;
+        right: 1rem;
+        left: 1rem;
+        transform: translateY(-100%);
+
+        &.show {
+            transform: translateY(0);
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .demo-content .demo-title {
+        font-size: 2rem;
+    }
+
+    .open-modal-btn {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+
+    .date-picker-wrapper {
+        padding: 1.5rem 1rem;
+    }
+    .date-card {
+        padding: 2rem 1rem;
+    }
+
+    .modal-header .header-content {
+        .header-icon {
+            width: 60px;
+            height: 60px;
+
+            i {
+                font-size: 1.5rem;
+            }
+        }
+
+        .header-text .header-title {
+            font-size: 1.8rem;
+        }
+    }
+}
+
+// =====

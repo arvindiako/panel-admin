@@ -1,0 +1,18 @@
+:root {
+    --primary-color: 85, 112, 241;
+    --secondary-color: 255, 204, 145;
+    --black-color: 28, 29, 34;
+    --red-color: 204, 95, 95;
+    --green-color: 81, 156, 102;
+    --white-color: 255, 255, 255;
+    --yellow-color: 255, 255, 0;
+    --orange-color: 255, 131, 0;
+}
+$primary-color: var(--primary-color);
+$secondary-color: var(--secondary-color);
+$black-color: var(--black-color);
+$red-color: var(--red-color);
+$green-color: var(--green-color);
+$white-color: var(--white-color);
+$yellow-color: var(--yellow-color);
+$orange-color: var(--orange-color);
