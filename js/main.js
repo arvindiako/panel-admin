@@ -420,35 +420,40 @@ $(document).ready(function () {
     });
 
     // ORDERS FILTER
-    $(document).ready(function () {
-        $("#searchOrders").on("input", function () {
-            const searchText = $(this).val().toLowerCase().trim();
+   $(document).ready(function () {
+    const $searchInput = $(".orders_search_container-search-input");
 
-            $(".order-item").each(function () {
-                const $order = $(this);
-                const content = [
-                    $order.find(".customer-name").text(),
-                    $order.find(".order-date").text(),
-                    $order.find(".delivery-method").text(),
-                    $order.find(".tracking-code").text(),
-                    $order.find(".total-price").text(),
-                    $order.find(".order-status").text(),
-                ]
-                    .join(" ")
-                    .toLowerCase();
+    // جستجو در سفارش‌ها
+    $searchInput.on("input", function () {
+        const searchText = $(this).val().toLowerCase().trim();
 
-                $order.toggle(content.includes(searchText));
-            });
+        $(".base_order").each(function () {
+            const $order = $(this);
+            const content = [
+                $order.find(".customer-name").text(),
+                $order.find(".order-date").text(),
+                $order.find(".delivery-method").text(),
+                $order.find(".tracking-code-init").text(),
+                $order.find(".total-price").text(),
+                $order.find(".status-badge").text(),
+            ]
+                .join(" ")
+                .toLowerCase();
+
+            $order.toggle(content.includes(searchText));
         });
     });
 
-    $(".orders_search_container-search-input")
+    // افزودن/حذف کلاس focused هنگام فوکوس و بلور
+    $searchInput
         .on("focus", function () {
             $(this).closest(".orders_search_container").addClass("focused");
         })
         .on("blur", function () {
             $(this).closest(".orders_search_container").removeClass("focused");
         });
+});
+
 
     // OPENING FILTERS
     let filtersVisible = false; // state flag

@@ -65,6 +65,19 @@
     }
 }
 
+@mixin transition($property: all, $duration: 0.2s, $timing: ease) {
+    transition: $property $duration $timing;
+}
+
+@mixin focus-state($color: $primary-color) {
+    border-color: rgba($color, 0.6);
+    box-shadow: 0 0 0 3px rgba($color, 0.15);
+}
+
+@mixin hover-state($color: $primary-color) {
+    border-color: rgba($color, 0.4);
+}
+
 // Font sizes
 $font-sizes: (
     "label3": 0.625rem,

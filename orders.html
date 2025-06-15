@@ -1877,13 +1877,14 @@
                                                         </button>
                                                     </div>
 
-                                                    <button class="filter_btn btn">
+                                                    <button class="filter_btn btn filter_btn_openning">
                                                         فیلتر
                                                         <div class="filter_btn-icon">
                                                             <i class="material-symbols-rounded">
                                                                 filter_alt
                                                             </i>
                                                         </div>
+
                                                     </button>
 
                                                     <button class="filter_btn btn filter_btn-date" id="filter_btn_date">
@@ -1924,7 +1925,63 @@
 
                                         </div>
 
-                                        <div class="orders_functional_box_inner-bottom"></div>
+                                        <div class="orders_functional_box_inner-bottom">
+                                            <div class="table-wrapper">
+                                                <div class="table-responsive">
+                                                    <table class="table custom-table" id="ordersTable">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>
+                                                                    <input type="checkbox" id="selectAll"
+                                                                        class="form-check-input">
+                                                                </th>
+                                                                <th>نام مشتری</th>
+                                                                <th>تاریخ سفارش</th>
+                                                                <th>نوع سفارش</th>
+                                                                <th>کد پیگیری</th>
+                                                                <th>مبلغ کل</th>
+                                                                <th>عملیات</th>
+                                                                <th>وضعیت</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="tableBody">
+                                                            <!-- Table rows will be populated by JavaScript -->
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                                <div class="pagination-container">
+                                                    <div class="pagination-info">
+                                                        <select class="form-select items-per-page" id="itemsPerPage">
+                                                            <option value="10">۱۰</option>
+                                                            <option value="20">۲۰</option>
+                                                            <option value="50">۵۰</option>
+                                                        </select>
+                                                        <span class="pagination-text">آیتم در هر صفحه</span>
+                                                        <span class="pagination-text" id="itemsRange">۱-۱۰ از ۲۰۰
+                                                            آیتم</span>
+                                                    </div>
+
+                                                    <div class="pagination-controls">
+                                                        <select class="form-select page-select" id="pageSelect">
+                                                            <!-- Options will be populated by JavaScript -->
+                                                        </select>
+                                                        <span class="pagination-text" id="pagesInfo">از ۲۰ صفحه</span>
+
+                                                        <div class="pagination-nav">
+                                                            <button class="btn pagination-btn" id="nextBtn"
+                                                                title="صفحه بعد">
+                                                                <i class="fas fa-chevron-right"></i>
+                                                            </button>
+                                                            <button class="btn pagination-btn" id="prevBtn"
+                                                                title="صفحه قبل">
+                                                                <i class="fas fa-chevron-left"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
 
                                 </div>
@@ -2119,7 +2176,232 @@
 
     </div>
 
+    <div id="filterBox" class="filter-container">
+        <div class="filter-backdrop"></div>
+        <div class="filter-content-wrapper">
+            <!-- سربرگ -->
+            <div class="filter-header">
+                <div class="header-content">
+                    <div class="header-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h5 class="filter-title">گزینه‌های فیلتر</h5>
+                </div>
+                <button class="btn-close-filter" id="closeFilter">
+                    <i class="fas fa-times"></i>
+                    <div class="close-ripple"></div>
+                </button>
+            </div>
+
+            <div class="filter-body">
+                <!-- بخش نوع سفارش -->
+                <div class="filter-section" data-section="order-type">
+                    <div class="section-header">
+                        <label class="section-label">
+                            <i class="fas fa-truck section-icon"></i>
+                            نوع سفارش
+                        </label>
+                        <div class="section-divider"></div>
+                    </div>
+                    <div class="radio-group">
+                        <div class="custom-radio">
+                            <input type="radio" id="homeDelivery" name="orderType" value="home" checked>
+                            <label for="homeDelivery">
+                                <div class="radio-indicator">
+                                    <div class="radio-dot"></div>
+                                </div>
+                                <div class="radio-content">
+                                    <i class="fas fa-home radio-icon"></i>
+                                    <span class="radio-text">ارسال به منزل</span>
+                                </div>
+                                <div class="radio-ripple"></div>
+                            </label>
+                        </div>
+                        <div class="custom-radio">
+                            <input type="radio" id="pickUp" name="orderType" value="pickup">
+                            <label for="pickUp">
+                                <div class="radio-indicator">
+                                    <div class="radio-dot"></div>
+                                </div>
+                                <div class="radio-content">
+                                    <i class="fas fa-shopping-bag radio-icon"></i>
+                                    <span class="radio-text">تحویل حضوری</span>
+                                </div>
+                                <div class="radio-ripple"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- بخش وضعیت -->
+                <div class="filter-section" data-section="status">
+                    <div class="section-header">
+                        <label class="section-label">
+                            <i class="fas fa-info-circle section-icon"></i>
+                            وضعیت
+                        </label>
+                        <div class="section-divider"></div>
+                    </div>
+                    <div class="custom-dropdown" data-dropdown="status">
+                        <div class="dropdown-trigger" tabindex="0">
+                            <div class="dropdown-value">
+                                <i class="fas fa-circle-dot value-icon"></i>
+                                <span class="value-text">همه وضعیت‌ها</span>
+                            </div>
+                            <div class="dropdown-arrow">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="dropdown-ripple"></div>
+                        </div>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-search">
+                                <i class="fas fa-search search-icon"></i>
+                                <input type="text" placeholder="جستجوی وضعیت..." class="search-input">
+                            </div>
+                            <div class="dropdown-options">
+                                <div class="dropdown-option active" data-value="all">
+                                    <i class="fas fa-circle-dot option-icon"></i>
+                                    <span class="option-text">همه وضعیت‌ها</span>
+                                    <i class="fas fa-check option-check"></i>
+                                </div>
+                                <div class="dropdown-option" data-value="pending">
+                                    <i class="fas fa-clock option-icon"></i>
+                                    <span class="option-text">در انتظار</span>
+                                    <i class="fas fa-check option-check"></i>
+                                </div>
+                                <div class="dropdown-option" data-value="processing">
+                                    <i class="fas fa-cog option-icon"></i>
+                                    <span class="option-text">در حال پردازش</span>
+                                    <i class="fas fa-check option-check"></i>
+                                </div>
+                                <div class="dropdown-option" data-value="completed">
+                                    <i class="fas fa-check-circle option-icon"></i>
+                                    <span class="option-text">تکمیل شده</span>
+                                    <i class="fas fa-check option-check"></i>
+                                </div>
+                                <div class="dropdown-option" data-value="cancelled">
+                                    <i class="fas fa-times-circle option-icon"></i>
+                                    <span class="option-text">لغو شده</span>
+                                    <i class="fas fa-check option-check"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- بخش مشتری -->
+                <div class="filter-section" data-section="customer">
+                    <div class="section-header">
+                        <label class="section-label">
+                            <i class="fas fa-user section-icon"></i>
+                            مشتری
+                        </label>
+                        <div class="section-divider"></div>
+                    </div>
+                    <div class="custom-dropdown" data-dropdown="customer">
+                        <div class="dropdown-trigger" tabindex="0">
+                            <div class="dropdown-value">
+                                <i class="fas fa-users value-icon"></i>
+                                <span class="value-text">همه مشتریان</span>
+                            </div>
+                            <div class="dropdown-arrow">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="dropdown-ripple"></div>
+                        </div>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-search">
+                                <i class="fas fa-search search-icon"></i>
+                                <input type="text" placeholder="جستجوی مشتری..." class="search-input">
+                            </div>
+                            <div class="dropdown-options">
+                                <div class="dropdown-option active" data-value="all">
+                                    <i class="fas fa-users option-icon"></i>
+                                    <span class="option-text">همه مشتریان</span>
+                                    <i class="fas fa-check option-check"></i>
+                                </div>
+                                <div class="dropdown-option" data-value="john-doe">
+                                    <div class="customer-avatar">JD</div>
+                                    <span class="option-text">جان دو</span>
+                                    <i class="fas fa-check option-check"></i>
+                                </div>
+                                <div class="dropdown-option" data-value="jane-smith">
+                                    <div class="customer-avatar">JS</div>
+                                    <span class="option-text">جین اسمیت</span>
+                                    <i class="fas fa-check option-check"></i>
+                                </div>
+                                <div class="dropdown-option" data-value="mike-johnson">
+                                    <div class="customer-avatar">MJ</div>
+                                    <span class="option-text">مایک جانسون</span>
+                                    <i class="fas fa-check option-check"></i>
+                                </div>
+                                <div class="dropdown-option" data-value="sarah-wilson">
+                                    <div class="customer-avatar">SW</div>
+                                    <span class="option-text">سارا ویلسون</span>
+                                    <i class="fas fa-check option-check"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- بخش محدوده مبلغ -->
+                <div class="filter-section" data-section="amount">
+                    <div class="section-header">
+                        <label class="section-label">
+                            <i class="fas fa-dollar-sign section-icon"></i>
+                            محدوده مبلغ
+                        </label>
+                        <div class="section-divider"></div>
+                    </div>
+                    <div class="amount-inputs">
+                        <div class="input-group">
+                            <label class="input-label">از</label>
+                            <div class="custom-input-wrapper">
+                                <div class="input-prefix">$</div>
+                                <input type="number" class="custom-input" placeholder="0" step="1" min="0"
+                                    data-input="amount-from">
+                                <div class="input-focus-line"></div>
+                            </div>
+                        </div>
+                        <div class="input-separator">
+                            <div class="separator-line"></div>
+                            <div class="separator-icon">
+                                <i class="fas fa-minus"></i>
+                            </div>
+                            <div class="separator-line"></div>
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label">تا</label>
+                            <div class="custom-input-wrapper">
+                                <div class="input-prefix">$</div>
+                                <input type="number" class="custom-input" placeholder="100" step="1" min="100"
+                                    data-input="amount-to">
+                                <div class="input-focus-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- دکمه‌های اعمال فیلتر -->
+                <div class="filter-actions">
+                    <button class="btn-reset" id="resetFilter">
+                        <i class="fas fa-undo"></i>
+                        <span class="btn-text">بازنشانی</span>
+                        <div class="btn-ripple"></div>
+                    </button>
+                    <button class="btn-apply" id="applyFilter">
+                        <i class="fas fa-search"></i>
+                        <span class="btn-text">اعمال فیلتر</span>
+                        <div class="btn-ripple"></div>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
     <div class="toaster-container" id="toasterContainer"></div>
+
 
 
 
@@ -2128,6 +2410,8 @@
     <script src="./js/index.min.js"></script>
     <script src="./js/jalaali.js"></script>
     <script src="./js/date-pickers.js"></script>
+    <script src="./js/filterBox.js"></script>
+    <script src="./js/ordersTable.js"></script>
     <script src="./js/chart.js"></script>
     <script src="./js/main.js"></script>
 </body>
