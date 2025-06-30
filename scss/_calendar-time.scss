@@ -1,0 +1,363 @@
+@mixin glass-effect {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+@mixin button-hover-effect {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent
+        );
+        transition: left 0.5s;
+    }
+
+    &:hover::before {
+        left: 100%;
+    }
+}
+
+@mixin gradient-text($color1, $color2) {
+    background: linear-gradient(135deg, $color1, $color2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@mixin slide-animation {
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 2px;
+        opacity: 0.7;
+        transition: left 0.5s ease;
+    }
+
+    &:hover::before {
+        left: 100%;
+    }
+}
+
+
+
+
+.form-section {
+    background: rgba($white-color, 1);
+    border-radius: $radius-2xl;
+    padding: $spacing-3xl;
+    box-shadow: 0 10px 30px rgba($black-color, 0.1);
+
+    h2 {
+        font-size: $font-2xl;
+        font-weight: 600;
+        color: rgba($black-color, 1);
+        margin-bottom: $spacing-3xl;
+        text-align: center;
+    }
+}
+
+// Input Groups
+.input-group {
+    margin-bottom: $spacing-2xl;
+
+    label {
+        display: block;
+        font-size: $font-base;
+        font-weight: 600;
+        color: rgba($black-color, 1);
+        margin-bottom: $spacing-sm;
+    }
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    input {
+        width: 100%;
+        padding: $spacing-lg $spacing-3xl $spacing-lg $spacing-lg;
+        border: 2px solid rgba($primary-color, 0.2);
+        border-radius: $radius-lg;
+        font-size: $font-lg;
+        color: rgba($black-color, 1);
+        background: rgba($white-color, 1);
+        transition: var(--transition);
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+            border-color: rgba($primary-color, 1);
+            box-shadow: 0 0 0 0.2rem rgba($primary-color, 0.25);
+        }
+
+        &:hover {
+            border-color: rgba($primary-color, 0.4);
+        }
+
+        &::placeholder {
+            color: rgba($black-color, 0.5);
+        }
+    }
+
+    .input-icon {
+        position: absolute;
+        right: $spacing-lg;
+        font-size: $font-xl;
+        color: rgba($primary-color, 1);
+        pointer-events: none;
+    }
+}
+
+// Time Selector Modal
+.time-selector-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999999;
+    animation: fadeIn 0.3s ease;
+
+    &.show {
+        display: flex;
+    }
+}
+
+.time-selector-container {
+    background: rgba($white-color, 1);
+    border-radius: $radius-2xl;
+    padding: $spacing-3xl;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    animation: scaleIn 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+            90deg,
+            rgba($primary-color, 1),
+            rgba($secondary-color, 1)
+        );
+    }
+}
+
+.time-selector-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-2xl;
+
+    .time-selector-title {
+        display: flex;
+        align-items: center;
+        gap: $spacing-md;
+        font-size: $font-xl;
+        font-weight: 600;
+        color: rgba($black-color, 1);
+
+        i {
+            color: rgba($primary-color, 1);
+        }
+    }
+
+    .close-time-btn {
+        background: rgba($red-color, 0.12);
+        border: 2px solid rgba(204, 95, 95, 0.2);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        @include flex-center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: rgba($red-color, 0.9);
+
+        &:hover {
+            background: rgba($red-color, 0.9);
+            color: rgba($white-color, 1);
+            transform: scale(1.1);
+        }
+    }
+}
+
+.time-selector-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-2xl;
+    margin-bottom: $spacing-3xl;
+}
+
+.time-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-lg;
+
+    label {
+        font-size: $font-base;
+        font-weight: 600;
+        color: rgba($black-color, 1);
+    }
+}
+
+.time-scroll {
+    height: 120px;
+    width: 80px;
+    overflow-y: auto;
+    border: 2px solid rgba($primary-color, 0.2);
+    border-radius: $radius-lg;
+    background: rgba($white-color, 1);
+    box-shadow: inset 0 2px 8px rgba($black-color, 0.1);
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: rgba($primary-color, 0.1);
+        border-radius: $radius-sm;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba($primary-color, 0.5);
+        border-radius: $radius-sm;
+
+        &:hover {
+            background: rgba($primary-color, 0.7);
+        }
+    }
+
+    .time-item {
+        padding: $spacing-lg;
+        text-align: center;
+        cursor: pointer;
+        transition: var(--transition);
+        font-size: $font-lg;
+        font-weight: 500;
+        border-bottom: 1px solid rgba($primary-color, 0.1);
+
+        &:hover {
+            background: rgba($primary-color, 0.1);
+        }
+
+        &.selected {
+            background: rgba($primary-color, 1);
+            color: rgba($white-color, 1);
+            font-weight: 600;
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
+
+.time-separator {
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgba($primary-color, 1);
+    margin-top: 2rem;
+}
+
+.time-selector-actions {
+    display: flex;
+    gap: $spacing-lg;
+
+    .time-action-btn {
+        flex: 1;
+        padding: $spacing-lg;
+        border: none;
+        border-radius: $radius-lg;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        @include flex-center;
+        gap: $spacing-sm;
+        font-size: $font-base;
+
+        &.clear-btn {
+            background: rgba($red-color, 0.12);
+            color: rgba($red-color, 0.9);
+            border: 2px solid rgba($red-color, 0.2);
+
+            &:hover {
+                background: rgba($red-color, 0.9);
+                color: rgba($white-color, 1);
+            }
+        }
+
+        &.confirm-btn {
+            background: rgba($primary-color, 1);
+            color: rgba($white-color, 1);
+
+            &:hover {
+                background: rgba($primary-color, 0.8);
+                transform: translateY(-2px);
+            }
+        }
+    }
+}
+
+
+
+// Responsive Design
+@media (max-width: 768px) {
+
+
+    .form-section {
+        padding: $spacing-2xl;
+    }
+
+    .time-selector-container {
+        margin: $spacing-lg;
+        padding: $spacing-2xl;
+    }
+
+    .time-selector-content {
+        flex-direction: column;
+        gap: $spacing-lg;
+    }
+
+    .time-scroll {
+        width: 120px;
+        height: 150px;
+    }
+
+    .time-selector-actions {
+        flex-direction: column;
+
+        .time-action-btn {
+            width: 100%;
+        }
+    }
+}

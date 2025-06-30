@@ -511,7 +511,7 @@
 }
 
 // ===== CALENDAR MODAL =====
-.calendar_modal {
+.calendar_modal,.dt-calendar-modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -522,7 +522,7 @@
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 1002;
+    z-index: 999999;
     animation: fadeIn 0.3s ease;
 
     &.show {
@@ -604,7 +604,7 @@
 }
 
 // ===== MONTH SELECTOR =====
-.month-selector {
+.month-selector,.dt-month-selector {
     display: none;
     flex-direction: column;
     gap: 0.5rem;
@@ -652,7 +652,7 @@
 }
 
 // ===== YEAR SELECTOR =====
-.year-selector {
+.year-selector,.dt-year-selector {
     display: none;
     flex-direction: column;
     gap: 0.5rem;

@@ -18,7 +18,7 @@
         }
 
         .filter-content-wrapper {
-            animation: slideInDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: slideInUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
     }
 
@@ -718,7 +718,7 @@
         rgba($primary-color, 0.9) 100%
     );
     color: rgb($white-color);
-    box-shadow: 0 10px 25px -5px rgba($primary-color, 0.3),
+    box-shadow: 0 8px 5px -5px rgba($primary-color, 0.3),
         0 4px 6px -4px rgba($primary-color, 0.2);
 
     &:hover:not(:disabled) {
@@ -750,6 +750,10 @@
     .filter-content-wrapper {
         width: 95%;
         max-height: 95vh;
+        left: unset;
+        bottom: 0;
+        top:unset;
+        transform:none;
     }
 
     .filter-header {
@@ -769,7 +773,7 @@
     }
 
     .custom-radio label {
-        padding: var(--spacing-md);
+        padding: var(--spacing-lg);
     }
 
     .amount-inputs {

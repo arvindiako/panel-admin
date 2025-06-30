@@ -1521,7 +1521,7 @@
             <div class="main_wrapper_header_top">
 
                 <h2 class="main_wrapper_header_top-title">
-                    داشبورد
+                    مشتریان
                 </h2>
 
                 <div class="main_wrapper_header_top-box">
@@ -1564,10 +1564,8 @@
                         </i>
                     </a>
                     <a class="main_wrapper_header_bottom-breadCrumbs-text">
-                        سفارشات /
+                        مشتریان /
                     </a>
-
-
 
                 </div>
 
@@ -1580,10 +1578,10 @@
             <div class="main_wrapper_body-inner w-100">
                 <div class="main_wrapper_body-inner-top w-100 d-flex align-items-center justify-content-between ">
                     <h4 class="main_wrapper_body-inner-top-title ">
-                        چکیده سفارشات
+                        خلاصه مشتریان
                     </h4>
-                    <a class="create_order_button btn">
-                        ساخت سفارش جدید
+                    <a class="create_order_button btn" id="customerToggle">
+                        ساخت مشتری جدید
                         <i class="material-symbols-rounded">
                             add
                         </i>
@@ -1594,9 +1592,11 @@
 
                         <div class="row w-100 m-0 p-0 row-gap-3">
 
-                            <div class="col-12 col-xl-3 order-2 order-xl-0 px-0 pe-xl-2">
+                            <div class="col-12 col-lg-6 px-0 pe-lg-2">
+
                                 <div class="costumers_box w-100">
                                     <div class="costumers_box_inner">
+
                                         <div class="costumers_box_inner_top">
 
                                             <div class="elegant-select ">
@@ -1624,7 +1624,7 @@
 
                                             <a href="#" class="box_header_icon box_header_icon-1">
                                                 <i class="material-symbols-rounded">
-                                                    shopping_cart
+                                                    shopping_bag
                                                 </i>
                                             </a>
 
@@ -1634,7 +1634,7 @@
 
                                             <div class="data_box">
                                                 <h4 class="data_box_title">
-                                                    مشتریان
+                                                    لغو شده
                                                 </h4>
                                                 <div class="data_box_status">
                                                     600
@@ -1646,7 +1646,19 @@
 
                                             <div class="data_box">
                                                 <h4 class="data_box_title">
-                                                    سبد خرید رها شده
+                                                    برگشت خورده
+                                                </h4>
+                                                <div class="data_box_status">
+                                                    110
+                                                    <div class="data_box_status-percentage">
+                                                        10%+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="data_box">
+                                                <h4 class="data_box_title">
+                                                    آسیب دیده
                                                 </h4>
                                                 <div class="data_box_status">
                                                     110
@@ -1661,181 +1673,91 @@
 
                                     </div>
                                 </div>
+
                             </div>
+                            <div class="col-12 col-lg-6 px-0 ps-lg-2">
 
-                            <div class="col-12 col-xl-9 order-1 order-xl-0 px-0 ps-xl-2">
-                                <div class="row w-100 p-0 m-0 row-gap-3">
+                                <div class="costumers_box w-100">
+                                    <div class="costumers_box_inner">
 
-                                    <div class="col-12 col-lg-6 px-0 pe-lg-2">
+                                        <div class="costumers_box_inner_top">
 
-                                        <div class="costumers_box w-100">
-                                            <div class="costumers_box_inner">
+                                            <div class="elegant-select ">
 
-                                                <div class="costumers_box_inner_top">
+                                                <select class="native-select" aria-hidden="true">
+                                                    <option value="">بازه زمانی</option>
+                                                    <option value="1">هفته گذشته</option>
+                                                    <option value="2">15 روز گذشته</option>
+                                                    <option value="3">ماه گذشته</option>
+                                                    <option value="4">3ماه گذشته</option>
+                                                </select>
 
-                                                    <div class="elegant-select ">
-
-                                                        <select class="native-select" aria-hidden="true">
-                                                            <option value="">بازه زمانی</option>
-                                                            <option value="1">هفته گذشته</option>
-                                                            <option value="2">15 روز گذشته</option>
-                                                            <option value="3">ماه گذشته</option>
-                                                            <option value="4">3ماه گذشته</option>
-                                                        </select>
-
-                                                        <div class="custom-select rounded-2">
-                                                            <div class="selected-value">بازه زمانی</div>
-                                                            <div class="options-container">
-                                                                <div class="option" data-value="">بازه زمانی</div>
-                                                                <div class="option" data-value="1">هفته گذشته</div>
-                                                                <div class="option" data-value="2">15 روز گذشته</div>
-                                                                <div class="option" data-value="3">ماه گذشته</div>
-                                                                <div class="option" data-value="4">3ماه گذشته</div>
-                                                            </div>
-                                                        </div>
-
+                                                <div class="custom-select rounded-2">
+                                                    <div class="selected-value">بازه زمانی</div>
+                                                    <div class="options-container">
+                                                        <div class="option" data-value="">بازه زمانی</div>
+                                                        <div class="option" data-value="1">هفته گذشته</div>
+                                                        <div class="option" data-value="2">15 روز گذشته</div>
+                                                        <div class="option" data-value="3">ماه گذشته</div>
+                                                        <div class="option" data-value="4">3ماه گذشته</div>
                                                     </div>
-
-                                                    <a href="#" class="box_header_icon box_header_icon-1">
-                                                        <i class="material-symbols-rounded">
-                                                            shopping_bag
-                                                        </i>
-                                                    </a>
-
-                                                </div>
-                                                <div class="costumers_box_inner_bottom">
-
-
-                                                    <div class="data_box">
-                                                        <h4 class="data_box_title">
-                                                            لغو شده
-                                                        </h4>
-                                                        <div class="data_box_status">
-                                                            600
-                                                            <div class="data_box_status-percentage">
-                                                                10%+
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="data_box">
-                                                        <h4 class="data_box_title">
-                                                            برگشت خورده
-                                                        </h4>
-                                                        <div class="data_box_status">
-                                                            110
-                                                            <div class="data_box_status-percentage">
-                                                                10%+
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="data_box">
-                                                        <h4 class="data_box_title">
-                                                            آسیب دیده
-                                                        </h4>
-                                                        <div class="data_box_status">
-                                                            110
-                                                            <div class="data_box_status-percentage">
-                                                                10%+
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-
                                                 </div>
 
                                             </div>
+
+                                            <a href="#" class="box_header_icon box_header_icon-1">
+                                                <i class="material-symbols-rounded">
+                                                    shopping_bag
+                                                </i>
+                                            </a>
+
                                         </div>
 
-                                    </div>
-                                    <div class="col-12 col-lg-6 px-0 ps-lg-2">
+                                        <div class="costumers_box_inner_bottom">
 
-                                        <div class="costumers_box w-100">
-                                            <div class="costumers_box_inner">
 
-                                                <div class="costumers_box_inner_top">
-
-                                                    <div class="elegant-select ">
-
-                                                        <select class="native-select" aria-hidden="true">
-                                                            <option value="">بازه زمانی</option>
-                                                            <option value="1">هفته گذشته</option>
-                                                            <option value="2">15 روز گذشته</option>
-                                                            <option value="3">ماه گذشته</option>
-                                                            <option value="4">3ماه گذشته</option>
-                                                        </select>
-
-                                                        <div class="custom-select rounded-2">
-                                                            <div class="selected-value">بازه زمانی</div>
-                                                            <div class="options-container">
-                                                                <div class="option" data-value="">بازه زمانی</div>
-                                                                <div class="option" data-value="1">هفته گذشته</div>
-                                                                <div class="option" data-value="2">15 روز گذشته</div>
-                                                                <div class="option" data-value="3">ماه گذشته</div>
-                                                                <div class="option" data-value="4">3ماه گذشته</div>
-                                                            </div>
-                                                        </div>
-
+                                            <div class="data_box">
+                                                <h4 class="data_box_title">
+                                                    سفارشات
+                                                </h4>
+                                                <div class="data_box_status">
+                                                    600
+                                                    <div class="data_box_status-percentage">
+                                                        10%+
                                                     </div>
-
-                                                    <a href="#" class="box_header_icon box_header_icon-1">
-                                                        <i class="material-symbols-rounded">
-                                                            shopping_bag
-                                                        </i>
-                                                    </a>
-
                                                 </div>
-
-                                                <div class="costumers_box_inner_bottom">
-
-
-                                                    <div class="data_box">
-                                                        <h4 class="data_box_title">
-                                                            سفارشات
-                                                        </h4>
-                                                        <div class="data_box_status">
-                                                            600
-                                                            <div class="data_box_status-percentage">
-                                                                10%+
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="data_box">
-                                                        <h4 class="data_box_title">
-                                                            در انتظار
-                                                        </h4>
-                                                        <div class="data_box_status">
-                                                            600
-                                                            <div class="data_box_status-percentage-down">
-                                                                10%+
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="data_box">
-                                                        <h4 class="data_box_title">
-                                                            تکمیل شده
-                                                        </h4>
-                                                        <div class="data_box_status">
-                                                            110
-                                                            <div class="data_box_status-percentage">
-                                                                10%+
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-
-                                                </div>
-
                                             </div>
+                                            <div class="data_box">
+                                                <h4 class="data_box_title">
+                                                    در انتظار
+                                                </h4>
+                                                <div class="data_box_status">
+                                                    600
+                                                    <div class="data_box_status-percentage-down">
+                                                        10%+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="data_box">
+                                                <h4 class="data_box_title">
+                                                    تکمیل شده
+                                                </h4>
+                                                <div class="data_box_status">
+                                                    110
+                                                    <div class="data_box_status-percentage">
+                                                        10%+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
                                         </div>
 
                                     </div>
-
                                 </div>
-                            </div>
 
+                            </div>
 
 
                             <div class="col-12 px-0 order-3">
@@ -1926,7 +1848,7 @@
                                         <div class="orders_functional_box_inner-bottom">
                                             <div class="table-wrapper">
                                                 <div class="table-responsive">
-                                                    <table class="table custom-table" id="ordersTable">
+                                                    <table class="table custom-table" id="customersTable">
                                                         <thead>
                                                             <tr>
                                                                 <th>
@@ -1934,10 +1856,11 @@
                                                                         class="form-check-input form-check-input-custom">
                                                                 </th>
                                                                 <th>نام مشتری</th>
-                                                                <th>تاریخ سفارش</th>
-                                                                <th>نوع سفارش</th>
-                                                                <th>کد پیگیری</th>
-                                                                <th>مبلغ کل</th>
+                                                                <th>ایمیل</th>
+                                                                <th>شماره موبایل</th>
+                                                                <th>تعداد سفارشات</th>
+                                                                <th>مجموع خرید</th>
+                                                                <th>تاریخ عضویت</th>
                                                                 <th>عملیات</th>
                                                                 <th>وضعیت</th>
                                                             </tr>
@@ -2044,7 +1967,7 @@
 
                     </div>
 
-                    <button class="date-button startDateBtn" id="startDateBtn">
+                    <button class="date-button" id="startDateBtn">
                         <div class="date-display">
                             <span class="date-text" id="startDateText">انتخاب تاریخ شروع</span>
                             <i class="fas fa-calendar-plus"></i>
@@ -2062,7 +1985,7 @@
                         <i class="fas fa-stop-circle"></i>
                         <span>تاریخ پایان (حداکثر امروز)</span>
                     </div>
-                    <button class="date-button endDateBtn" id="endDateBtn">
+                    <button class="date-button" id="endDateBtn">
                         <div class="date-display">
                             <span class="date-text" id="endDateText">انتخاب تاریخ پایان</span>
                             <i class="fas fa-calendar-plus"></i>
@@ -2398,336 +2321,146 @@
             </div>
         </div>
     </div>
+   
+    <div id="customerModal" class="customer-modal">
+        
+        <div class="customer-backdrop"></div>
+        
+        <div class="customer-content">
+            <!-- Header -->
+            <div class="customer-header d-flex">
+                <h5 class="customer-title">افزودن مشتری جدید</h5>
+                <button class="customer-btn-close d-flex" id="closeCustomer">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
 
+            <div class="customer-body">
+                
+                <form id="customerForm" class="customer_form">
+                    <!-- Customer Info -->
+                    <div class="customer-section d-flex">
+                        <div class="customer-section-header d-flex">
+                            <label class="customer-section-label d-flex">
+                                <i class="fas fa-user"></i>
+                                اطلاعات مشتری
+                            </label>
+                        </div>
+
+                        <div class="customer-group d-flex">
+                            <input type="text" class="customer-input" placeholder="نام مشتری" data-input="customer-name"
+                                pattern="^[\u0600-\u06FF\s]+$" required>
+                        </div>
+
+                        <div class="customer-group d-flex">
+                            <input type="email" class="customer-input" placeholder="ایمیل مشتری"
+                                data-input="customer-email" required>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="customer-group d-flex">
+                            <div class="customer-phone-wrapper d-flex">
+                                <input type="tel" class="customer-input customer-phone-input" placeholder="۹۱۲۳۴۵۶۷۸۹"
+                                    data-input="phone-number" pattern="^(?:\+98|0)?9\d{9}$" required>
+                                <div class="customer-phone-code d-flex">
+                                    <span class="phone-flag">🇮🇷</span>
+                                    <span class="phone-code">۹۸+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="customer-section d-flex">
+
+                        <div class="customer-section-header d-flex">
+                            <label class="customer-section-label d-flex">
+                                <i class="fas fa-map-marker-alt"></i>
+                                افزودن آدرس
+                            </label>
+                            <div class="customer-toggle">
+                                <input type="checkbox" id="addAddressToggle">
+                                <label for="addAddressToggle"></label>
+                            </div>
+                        </div>
+
+                        <div class="customer-address-fields d-flex hidden" id="addressFields">
+
+                            <div class="customer-group d-flex">
+                                <input type="text" class="customer-input" placeholder="آدرس خیابان"
+                                    data-input="street-address">
+                            </div>
+
+                            <div class="customer-group d-flex">
+                                <input type="text" class="customer-input" placeholder="شهر" data-input="city">
+                            </div>
+
+                            <div class="customer-group d-flex">
+                                <div class="customer-location-group d-flex">
+                                    <input type="text" class="customer-input" placeholder="شهر" data-input="city">
+                                    <div class="customer-dropdown" data-dropdown="state">
+                                        <div class="customer-dropdown-trigger d-flex">
+                                            <span class="customer-value">استان</span>
+                                            <i class="fas fa-chevron-down"></i>
+                                        </div>
+                                        <div class="customer-dropdown-menu">
+                                            <div class="customer-dropdown-option" data-value="tehran">تهران</div>
+                                            <div class="customer-dropdown-option" data-value="isfahan">اصفهان</div>
+                                            <div class="customer-dropdown-option" data-value="shiraz">شیراز</div>
+                                            <div class="customer-dropdown-option" data-value="mashhad">مشهد</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Billing -->
+                    <div class="customer-section d-flex">
+
+                        <div class="customer-billing-option d-flex">
+
+                            <span>آدرس صورتحساب مشابه مشتری</span>
+
+                            <div class="customer-toggle">
+                                <input type="checkbox" id="billingSameToggle" checked>
+                                <label for="billingSameToggle"></label>
+                            </div>
+
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="customer-actions row mx-0">
+                         
+                            <button type="submit" class="col-5 customer-btn customer-btn-primary" id="submitCustomer">
+                                <i class="fas fa-plus"></i>
+                                <span>افزودن</span>
+                            </button>
+                        
+                        
+                            <button type="button" class="col-5 customer-btn customer-btn-secondary" id="cancelCustomer">
+                                <span>لغو</span>
+                            </button>
+
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+  
     <div class="toaster-container" id="toasterContainer"></div>
 
-    <div class="modal fade create_order_modal" id="createOrderModal" tabindex="-1"
-        aria-labelledby="createOrderModalLabel" aria-hidden="true" data-bs-backdrop="static">
-        <div class="modal-dialog modal-xl  create_order_modal-dialog">
-            <div class="modal-content order-modal-wrapper">
-                <!-- Header -->
-                <div class="modal-header order-modal-header border-bottom">
-                    <h2 class="modal-title order-modal-title fs-4 fw-semibold" id="createOrderModalLabel">ایجاد سفارش
-                        جدید</h2>
-                    <button type="button" class="btn-close order-close-button" data-bs-dismiss="modal"
-                        aria-label="بستن">
-                        <div class="order-btn-ripple">
-                            <i class="fas fa-times"></i>
-                        </div>
-                    </button>
-                </div>
-
-                <!-- Body -->
-                <div class="modal-body order-modal-body">
-                    <div class="container-fluid">
-                        <div class="row g-4 row-gap-3">
-                            <!-- Order Details Section -->
-                            <div class="col-lg-6">
-                                <div class="order-form-section">
-                                    <div
-                                        class="order-section-header d-flex justify-content-between align-items-center  flex-wrap">
-                                        <h3 class="order-section-title ">جزئیات سفارش</h3>
-                                        <div class="order-toggle-wrapper d-flex align-items-center gap-3">
-                                            <span class="order-toggle-label">مشتری جدید</span>
-                                            <div class="order-custom-toggle">
-                                                <input type="checkbox" id="newCustomerToggle"
-                                                    class="order-toggle-input">
-                                                <label for="newCustomerToggle" class="order-toggle-slider"></label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="order-form-group ">
-                                        <div class="order-custom-dropdown" data-dropdown="customerSelect">
-                                            <div class="order-dropdown-trigger">
-                                                <span class="order-dropdown-text">انتخاب مشتری</span>
-                                                <i class="fas fa-chevron-down order-dropdown-arrow"></i>
-                                            </div>
-                                            <div class="order-dropdown-menu">
-                                                <div class="order-dropdown-item" data-value="">انتخاب مشتری</div>
-                                                <div class="order-dropdown-item" data-value="customer1">علی احمدی</div>
-                                                <div class="order-dropdown-item" data-value="customer2">فاطمه محمدی
-                                                </div>
-                                                <div class="order-dropdown-item" data-value="customer3">حسن رضایی</div>
-                                                <div class="order-dropdown-item" data-value="customer4">مریم کریمی</div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row g-0 row-gap-3 w-100">
-                                        <div class="col-sm-6 pe-sm-2">
-                                            <div class="order-custom-dropdown" data-dropdown="paymentType">
-                                                <div class="order-dropdown-trigger">
-                                                    <span class="order-dropdown-text">نوع پرداخت</span>
-                                                    <i class="fas fa-chevron-down order-dropdown-arrow"></i>
-                                                </div>
-                                                <div class="order-dropdown-menu">
-                                                    <div class="order-dropdown-item" data-value="">نوع پرداخت</div>
-                                                    <div class="order-dropdown-item" data-value="cash">
-                                                        <i class="fas fa-money-bill"></i>
-                                                        نقدی
-                                                    </div>
-                                                    <div class="order-dropdown-item" data-value="card">
-                                                        <i class="fas fa-credit-card"></i>
-                                                        کارت اعتباری
-                                                    </div>
-                                                    <div class="order-dropdown-item" data-value="digital">
-                                                        <i class="fas fa-mobile-alt"></i>
-                                                        کیف پول دیجیتال
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 ps-sm-2">
-                                            <div class="order-custom-dropdown" data-dropdown="orderType">
-                                                <div class="order-dropdown-trigger">
-                                                    <span class="order-dropdown-text">نوع سفارش</span>
-                                                    <i class="fas fa-chevron-down order-dropdown-arrow"></i>
-                                                </div>
-                                                <div class="order-dropdown-menu">
-                                                    <div class="order-dropdown-item" data-value="">نوع سفارش</div>
-                                                    <div class="order-dropdown-item" data-value="dine-in">
-                                                        <i class="fas fa-utensils"></i>
-                                                        حضوری
-                                                    </div>
-                                                    <div class="order-dropdown-item" data-value="takeout">
-                                                        <i class="fas fa-shopping-bag"></i>
-                                                        بیرون بر
-                                                    </div>
-                                                    <div class="order-dropdown-item" data-value="delivery">
-                                                        <i class="fas fa-truck"></i>
-                                                        تحویل
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="order-form-group ">
-                                        <label class="order-form-label fw-medium">زمان و تاریخ سفارش</label>
-
-                                        <div class="row g-0 row-gap-3 w-100">
-
-                                            <div class="col-sm-6 pe-sm-2">
-                                                <div class="order-input-group input-group">
-                                                    <span class="input-group-text order-input-icon input-icon">
-                                                        <i class="fas fa-calendar"></i>
-                                                    </span>
-                                                    <input type="text" id="orderDate"
-                                                        class="date-input form-control order-custom-input"
-                                                         readonly>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-sm-6 ps-sm-2">
-                                                <div class="order-input-group input-group">
-                                                    <span class="input-group-text order-input-icon">
-                                                        <i class="fas fa-clock"></i>
-                                                    </span>
-
-                                                    <input type="text" id="orderTime"
-                                                        class="time-input form-control order-custom-input"
-                                                     readonly>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="order-form-group ">
-                                        <label class="order-form-label fw-medium">وضعیت سفارش</label>
-                                        <div class="order-custom-dropdown" data-dropdown="orderStatus">
-                                            <div class="order-dropdown-trigger">
-                                                <span class="order-dropdown-text">در انتظار</span>
-                                                <i class="fas fa-chevron-down order-dropdown-arrow"></i>
-                                            </div>
-                                            <div class="order-dropdown-menu">
-                                                <div class="order-dropdown-item order-active" data-value="pending">
-                                                    <div class="order-status-indicator order-status-pending"></div>
-                                                    در انتظار
-                                                </div>
-                                                <div class="order-dropdown-item" data-value="confirmed">
-                                                    <div class="order-status-indicator order-status-confirmed"></div>
-                                                    تایید شده
-                                                </div>
-                                                <div class="order-dropdown-item" data-value="preparing">
-                                                    <div class="order-status-indicator order-status-preparing"></div>
-                                                    در حال آماده سازی
-                                                </div>
-                                                <div class="order-dropdown-item" data-value="ready">
-                                                    <div class="order-status-indicator order-status-ready"></div>
-                                                    آماده
-                                                </div>
-                                                <div class="order-dropdown-item" data-value="completed">
-                                                    <div class="order-status-indicator order-status-completed"></div>
-                                                    تکمیل شده
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="order-form-group ">
-                                        <textarea id="orderNote" class="form-control order-custom-textarea"
-                                            placeholder="یادداشت سفارش" rows="3"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Items Section -->
-                            <div class="col-lg-6">
-                                <div class="order-items-section">
-                                    <h3 class="order-section-title ">اقلام</h3>
-
-                                    <div class="order-search-wrapper ">
-                                        <div class="order-search-group input-group">
-                                            <input type="text" class="form-control order-search-input"
-                                                id="productSearch" placeholder="جستجوی نام محصول">
-                                            <span class="input-group-text order-search-icon">
-                                                <i class="fas fa-search"></i>
-                                            </span>
-                                        </div>
-                                    </div>
-
-                                    <div class="order-items-content d-flex align-items-center justify-content-center"
-                                        style="min-height: 300px;">
-                                        <div class="order-empty-state text-center">
-                                            <div class="order-empty-icon mx-auto ">
-                                                <i class="fas fa-ghost"></i>
-                                            </div>
-                                            <div class="order-empty-state-typo">
-                                                <h4 class="order-empty-title ">محصولات را به سفارش خود اضافه کنید</h4>
-                                                <p class="order-empty-text ">محصولات را جستجو کرده و به این سفارش اضافه
-                                                    کنید.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Footer -->
-                <div class="modal-footer order-modal-footer border-top">
-                    <button type="button" class="order-primary-btn" id="createOrderBtn">
-                        <span>ایجاد سفارش</span>
-                        <div class="order-btn-ripple"></div>
-                    </button>
-                    <button type="button" class="order-secondary-btn ms-2" data-bs-dismiss="modal">
-                        <span>لغو</span>
-                        <div class="order-btn-ripple"></div>
-                    </button>
-                </div>
-
-            </div>
-        </div>
-    </div>
 
 
-    <div class="calendar_modal calendarModal" id="calendarModal">
-        <div class="calendar-container">
-            <div class="calendar-header">
-                <button class="calendar-nav-btn prevMonth" id="prevMonth">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-                <div class="calendar-title calendarTitle" id="calendarTitle">
-                    <span id="currentMonth" class="currentMonth"></span>
-                    <span id="currentYear" class="currentYear"></span>
-                </div>
-                <button class="calendar-nav-btn nextMonth" id="nextMonth">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-            </div>
-
-            <!-- Month Selector -->
-            <div class="month-selector monthSelector" id="monthSelector">
-                <div class="month-selector-header">
-                    <div class="month-selector-title">انتخاب ماه</div>
-                </div>
-                <div class="month-selector-grid monthGrid" id="monthGrid"></div>
-            </div>
-
-            <!-- Year Selector -->
-            <div class="year-selector yearSelector" id="yearSelector">
-                <div class="year-selector-header">
-                    <button class="calendar-nav-btn prevYearPage" id="prevYearPage">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                    <div class="year-selector-title yearRangeDisplay" id="yearRangeDisplay"></div>
-                    <button class="calendar-nav-btn nextYearPage" id="nextYearPage">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                </div>
-                <div class="year-selector-grid yearGrid" id="yearGrid"></div>
-            </div>
-
-            <div class="calendar-weekdays">
-                <div class="weekday">ش</div>
-                <div class="weekday">ی</div>
-                <div class="weekday">د</div>
-                <div class="weekday">س</div>
-                <div class="weekday">چ</div>
-                <div class="weekday">پ</div>
-                <div class="weekday">ج</div>
-            </div>
-
-            <div class="calendar-days calendarDays" id="calendarDays"></div>
-
-            <div class="calendar-actions">
-                <button class="calendar-reset-btn calendarResetBtn" id="calendarResetBtn">
-                    <i class="fas fa-times"></i>
-                    <span>پاک کردن</span>
-                </button>
-                <button class="calendar-close-btn calendarCloseBtn" id="calendarCloseBtn">
-                    <i class="fas fa-check"></i>
-                    <span>تایید</span>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Time Selector Modal -->
-    <div class="time-selector-modal timeModal" id="timeModal">
-        <div class="time-selector-container">
-            <div class="time-selector-header">
-                <div class="time-selector-title">
-                    <i class="fas fa-clock"></i>
-                    <span>انتخاب زمان</span>
-                </div>
-                <button class="close-time-btn" id="closeTimeBtn">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-
-            <div class="time-selector-content">
-                <div class="time-section">
-                    <label>ساعت</label>
-                    <div class="time-scroll" id="hourScroll">
-                        <!-- Hours will be generated -->
-                    </div>
-                </div>
-                <div class="time-separator">:</div>
-                <div class="time-section">
-                    <label>دقیقه</label>
-                    <div class="time-scroll" id="minuteScroll">
-                        <!-- Minutes will be generated -->
-                    </div>
-                </div>
-            </div>
-
-            <div class="time-selector-actions">
-                <button class="time-action-btn clear-btn" id="clearTimeBtn">
-                    <i class="fas fa-undo"></i>
-                    <span>پاک کردن</span>
-                </button>
-                <button class="time-action-btn confirm-btn " id="confirmTimeBtn">
-                    <i class="fas fa-check"></i>
-                    <span>تایید</span>
-                </button>
-            </div>
-        </div>
-    </div>
 
     <script src="./bootstrap-5.3.5/dist/js/bootstrap.bundle.js"></script>
     <script src="./js/jquery-3.7.1.min.js"></script>
@@ -2736,11 +2469,9 @@
     <script src="./js/date-pickers.js"></script>
     <script src="./js/filterBox.js"></script>
     <script src="./js/ordersTable.js"></script>
+    <script src="./js/add-customer.js"></script>
     <script src="./js/chart.js"></script>
-    <script src="/PanelAdmin/js/createOrderModal.js"></script>
-    <script src="./js/date-time.js"></script>
     <script src="./js/main.js"></script>
-
 </body>
 
 </html>

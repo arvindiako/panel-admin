@@ -420,40 +420,46 @@ $(document).ready(function () {
     });
 
     // ORDERS FILTER
-   $(document).ready(function () {
-    const $searchInput = $(".orders_search_container-search-input");
+    $(document).ready(function () {
+        const $searchInput = $(".orders_search_container-search-input");
 
-    // جستجو در سفارش‌ها
-    $searchInput.on("input", function () {
-        const searchText = $(this).val().toLowerCase().trim();
+        // جستجو در سفارش‌ها
+        $searchInput.on("input", function () {
+            const searchText = $(this).val().toLowerCase().trim();
 
-        $(".base_order").each(function () {
-            const $order = $(this);
-            const content = [
-                $order.find(".customer-name").text(),
-                $order.find(".order-date").text(),
-                $order.find(".delivery-method").text(),
-                $order.find(".tracking-code-init").text(),
-                $order.find(".total-price").text(),
-                $order.find(".status-badge").text(),
-            ]
-                .join(" ")
-                .toLowerCase();
+            $(".base_order, .customer-table").each(function () {
+                const $details = $(this);
+                const content = [
+                    $details.find(".customer-name").text(),
+                    $details.find(".order-date").text(),
+                    $details.find(".customer-join-date").text(),
+                    $details.find(".customer-email").text(),
+                    $details.find(".customer-phone").text(),
+                    $details.find(".customer-order-count").text(),
+                    $details.find(".customer-order-cost").text(),
+                    $details.find(".delivery-method").text(),
+                    $details.find(".tracking-code-init").text(),
+                    $details.find(".total-price").text(),
+                    $details.find(".status-badge").text(),
+                ]
+                    .join(" ")
+                    .toLowerCase();
 
-            $order.toggle(content.includes(searchText));
+                $details.toggle(content.includes(searchText));
+            });
         });
+
+        // افزودن/حذف کلاس focused هنگام فوکوس و بلور
+        $searchInput
+            .on("focus", function () {
+                $(this).closest(".orders_search_container").addClass("focused");
+            })
+            .on("blur", function () {
+                $(this)
+                    .closest(".orders_search_container")
+                    .removeClass("focused");
+            });
     });
-
-    // افزودن/حذف کلاس focused هنگام فوکوس و بلور
-    $searchInput
-        .on("focus", function () {
-            $(this).closest(".orders_search_container").addClass("focused");
-        })
-        .on("blur", function () {
-            $(this).closest(".orders_search_container").removeClass("focused");
-        });
-});
-
 
     // OPENING FILTERS
     let filtersVisible = false; // state flag

@@ -475,7 +475,7 @@ $(document).ready(function() {
         });
         
         // Show feedback
-        $btn.html('<i class="fas fa-check"></i><span class="btn-text">Reset!</span>');
+        $btn.html('<i class="fas fa-check"></i><span class="btn-text">بازنشانی شد</span>');
         setTimeout(() => {
             $btn.html(originalContent);
         }, 1500);

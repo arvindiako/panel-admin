@@ -124,7 +124,7 @@ class JalaliDate {
     }
 
     format() {
-        return `${this.jd} ${jalaliMonths[this.jm - 1]} ${this.jy}`;
+        return `${this.jd} / ${this.jm - 1} / ${this.jy}`;
     }
 }
 
@@ -146,8 +146,8 @@ const $datePickerModal = $("#datePickerModal");
 const $closeModalBtn = $("#closeModalBtn");
 const $confirmBtn = $("#confirmBtn");
 
-const $startDateBtn = $("#startDateBtn");
-const $endDateBtn = $("#endDateBtn");
+const $startDateBtn = $(".startDateBtn");
+const $endDateBtn = $(".endDateBtn");
 const $startDateText = $("#startDateText");
 const $endDateText = $("#endDateText");
 const $resetStartBtn = $("#resetStartBtn");
@@ -163,27 +163,27 @@ const $displayStartDate = $("#displayStartDate");
 const $displayEndDate = $("#displayEndDate");
 
 // Calendar Modal Elements
-const $calendarModal = $("#calendarModal");
+const $calendarModal = $(".calendarModal");
 const $calendarTitle = $("#calendarTitle");
-const $currentMonthSpan = $("#currentMonth");
-const $currentYearSpan = $("#currentYear");
-const $calendarDays = $("#calendarDays");
+const $currentMonthSpan = $(".currentMonth");
+const $currentYearSpan = $(".currentYear");
+const $calendarDays = $(".calendarDays");
 const $calendarWeekdays = $(".calendar-weekdays");
-const $prevMonthBtn = $("#prevMonth");
-const $nextMonthBtn = $("#nextMonth");
-const $calendarResetBtn = $("#calendarResetBtn");
-const $calendarCloseBtn = $("#calendarCloseBtn");
+const $prevMonthBtn = $(".prevMonth");
+const $nextMonthBtn = $(".nextMonth");
+const $calendarResetBtn = $(".calendarResetBtn");
+const $calendarCloseBtn = $(".calendarCloseBtn");
 
 // Month Selector Elements
-const $monthSelector = $("#monthSelector");
-const $monthGrid = $("#monthGrid");
+const $monthSelector = $(".monthSelector");
+const $monthGrid = $(".monthGrid");
 
 // Year Selector Elements
-const $yearSelector = $("#yearSelector");
-const $yearRangeDisplay = $("#yearRangeDisplay");
-const $yearGrid = $("#yearGrid");
-const $prevYearPageBtn = $("#prevYearPage");
-const $nextYearPageBtn = $("#nextYearPage");
+const $yearSelector = $(".yearSelector");
+const $yearRangeDisplay = $(".yearRangeDisplay");
+const $yearGrid = $(".yearGrid");
+const $prevYearPageBtn = $(".prevYearPage");
+const $nextYearPageBtn = $(".nextYearPage");
 
 // Event Listeners
 $openModalBtn.on("click", openDatePickerModal);
@@ -533,7 +533,8 @@ function updateSelectedRange() {
 
 // Notification system
 function showNotification(message, type = "info", options = {}) {
-    const toasterId = "toast_" + Date.now();
+   const toasterId = "toast_" + Date.now() + "_" + Math.floor(Math.random() * 10000);
+
 
     // Create notification content
     let toasterContent = "";

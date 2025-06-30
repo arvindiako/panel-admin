@@ -7,29 +7,57 @@
     --white-color: 255, 255, 255;
     --yellow-color: 255, 255, 0;
     --orange-color: 255, 131, 0;
-    
-    --radius-xs: 4px;
-    --radius-sm: 6px;
-    --radius-md: 8px;
-    --radius-lg: 12px;
-    --radius-xl: 16px;
-    --radius-2xl: 20px;
-    
-    --spacing-xs: 4px;
-    --spacing-sm: 8px;
-    --spacing-md: 12px;
-    --spacing-lg: 16px;
-    --spacing-xl: 20px;
-    --spacing-2xl: 24px;
-    --spacing-3xl: 32px;
-    
-    --font-xs: 11px;
-    --font-sm: 12px;
-    --font-base: 14px;
-    --font-lg: 16px;
-    --font-xl: 18px;
-    --font-2xl: 20px;
+
+     --transition: all 0.3s ease;
+
+    --radius-xs: 0.25rem;
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-2xl: 1.25rem;
+
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 0.75rem;
+    --spacing-lg: 1rem;
+    --spacing-xl: 1.25rem;
+    --spacing-2xl: 1.5rem;
+    --spacing-3xl: 2rem;
+
+    --font-xs: 0.6875rem;
+    --font-sm: 0.75rem;
+    --font-base: 0.875rem;
+    --font-lg: 1rem;
+    --font-xl: 1.125rem;
+    --font-2xl: 1.25rem;
 }
+
+// Radius
+$radius-xs: var(--radius-xs);
+$radius-sm: var(--radius-sm);
+$radius-md: var(--radius-md);
+$radius-lg: var(--radius-lg);
+$radius-xl: var(--radius-xl);
+$radius-2xl: var(--radius-2xl);
+
+// Spacing
+$spacing-xs: var(--spacing-xs);
+$spacing-sm: var(--spacing-sm);
+$spacing-md: var(--spacing-md);
+$spacing-lg: var(--spacing-lg);
+$spacing-xl: var(--spacing-xl);
+$spacing-2xl: var(--spacing-2xl);
+$spacing-3xl: var(--spacing-3xl);
+
+// Font sizes
+$font-xs: var(--font-xs);
+$font-sm: var(--font-sm);
+$font-base: var(--font-base);
+$font-lg: var(--font-lg);
+$font-xl: var(--font-xl);
+$font-2xl: var(--font-2xl);
+
 $primary-color: var(--primary-color);
 $secondary-color: var(--secondary-color);
 $black-color: var(--black-color);
