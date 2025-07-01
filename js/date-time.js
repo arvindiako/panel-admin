@@ -151,13 +151,13 @@
         }
 
         format() {
-            return `${this.jy}/${this.jm}/${this.jd}`;
+            return `${this.jd} / ${this.jm} / ${this.jy}`;
         }
     }
 
     // Private variables
-    let dtSelectedDate = null;
-    let dtSelectedTime = { hour: 12, minute: 0 };
+    let dtSelectedDate = new JalaliDate();
+    let dtSelectedTime = { hour: "", minute: "" };
     let dtCurrentCalendarDate = new JalaliDate();
     let dtCurrentView = "days"; // 'days', 'months', 'years'
     let dtYearSelectorStartYear =
@@ -179,6 +179,7 @@
         bindEvents();
         initializeTimeScrollers();
         setCurrentTime();
+        updateDateDisplay();
 
         isInitialized = true;
     }

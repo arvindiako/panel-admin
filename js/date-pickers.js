@@ -124,7 +124,7 @@ class JalaliDate {
     }
 
     format() {
-        return `${this.jd} / ${this.jm - 1} / ${this.jy}`;
+        return `${this.jd} / ${this.jm} / ${this.jy}`;
     }
 }
 
@@ -533,8 +533,8 @@ function updateSelectedRange() {
 
 // Notification system
 function showNotification(message, type = "info", options = {}) {
-   const toasterId = "toast_" + Date.now() + "_" + Math.floor(Math.random() * 10000);
-
+    const toasterId =
+        "toast_" + Date.now() + "_" + Math.floor(Math.random() * 10000);
 
     // Create notification content
     let toasterContent = "";

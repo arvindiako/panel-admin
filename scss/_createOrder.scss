@@ -13,21 +13,30 @@
     --bs-modal-width: unset;
     scrollbar-width: none;
     display: flex !important;
-  align-items: center;
-  justify-content: start;
-  flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
 
-    @media screen and (min-width: 992px) {
+    @media screen and (min-width: 576px) {
         height: 100%;
+    }
+    @media screen and (min-width: 992px) and (min-height: 750px) {
+        justify-content: center;
+    }
+
+    @media screen and (min-width: 768px) {
         border-radius: var(--radius-xl) !important;
-        // position: unset;
     }
     .modal-dialog {
         min-height: unset;
         margin: 1rem 0 0 0 !important;
         max-width: 600px;
-        @media screen and (min-width:992px){
-            max-width: unset;
+        @media screen and (min-width: 768px) {
+            max-width: 750px;
+        }
+        @media screen and (min-width: 992px) and (min-height: 750px) {
+            max-width: 800px;
+            margin: 0 !important;
         }
     }
 }
@@ -118,7 +127,7 @@
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
     overflow: hidden;
     direction: rtl;
-    @media screen and (min-width: 992px) {
+    @media screen and (min-width: 768px) {
         border-radius: var(--radius-xl) !important;
     }
 }
@@ -713,3 +722,59 @@
 
     // }
 }
+// Add these styles to your existing SCSS file
+
+// New customer fields animation
+#newCustomerFields {
+    animation: modalSlideIn 0.3s ease-out;
+
+    .order-form-group {
+        opacity: 0;
+        animation: modalSlideIn 0.4s ease-out forwards;
+
+        &:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+        &:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        &:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+    }
+}
+
+// Country code dropdown specific styles
+.order-custom-dropdown[data-dropdown="countryCode"] {
+
+    .order-dropdown-trigger {
+        padding: var(--spacing-md) var(--spacing-md);
+        font-size: var(--font-sm);
+        font-weight: 500;
+
+        .order-dropdown-text {
+            font-family: monospace;
+        }
+    }
+
+    .order-dropdown-item {
+        font-size: var(--font-sm);
+
+        i {
+            color: #10b981;
+        }
+    }
+}
+
+// Phone input group styling
+.order-input-group {
+    .order-custom-dropdown[data-dropdown="countryCode"] {
+        .order-dropdown-trigger {
+            border-radius: var(--bs-border-radius) 0 0 var(--bs-border-radius);
+            border-right: none;
+        }
+    }
+
+   
+}
+

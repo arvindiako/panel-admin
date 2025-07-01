@@ -5453,9 +5453,18 @@ header .crm_header .mobile_menu_closing:hover i {
   justify-content: start;
   flex-direction: column;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 576px) {
   .create_order_modal.show {
     height: 100%;
+  }
+}
+@media screen and (min-width: 992px) and (min-height: 750px) {
+  .create_order_modal.show {
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  .create_order_modal.show {
     border-radius: var(--radius-xl) !important;
   }
 }
@@ -5464,9 +5473,15 @@ header .crm_header .mobile_menu_closing:hover i {
   margin: 1rem 0 0 0 !important;
   max-width: 600px;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .create_order_modal.show .modal-dialog {
-    max-width: unset;
+    max-width: 750px;
+  }
+}
+@media screen and (min-width: 992px) and (min-height: 750px) {
+  .create_order_modal.show .modal-dialog {
+    max-width: 800px;
+    margin: 0 !important;
   }
 }
 
@@ -5546,7 +5561,7 @@ header .crm_header .mobile_menu_closing:hover i {
   overflow: hidden;
   direction: rtl;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .order-modal-wrapper {
     border-radius: var(--radius-xl) !important;
   }
@@ -6058,6 +6073,43 @@ header .crm_header .mobile_menu_closing:hover i {
 }
 .order-dropdown-menu::-webkit-scrollbar-thumb:hover {
   background: #a8a8a8;
+}
+
+#newCustomerFields {
+  animation: modalSlideIn 0.3s ease-out;
+}
+#newCustomerFields .order-form-group {
+  opacity: 0;
+  animation: modalSlideIn 0.4s ease-out forwards;
+}
+#newCustomerFields .order-form-group:nth-child(1) {
+  animation-delay: 0.1s;
+}
+#newCustomerFields .order-form-group:nth-child(2) {
+  animation-delay: 0.2s;
+}
+#newCustomerFields .order-form-group:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.order-custom-dropdown[data-dropdown=countryCode] .order-dropdown-trigger {
+  padding: var(--spacing-md) var(--spacing-md);
+  font-size: var(--font-sm);
+  font-weight: 500;
+}
+.order-custom-dropdown[data-dropdown=countryCode] .order-dropdown-trigger .order-dropdown-text {
+  font-family: monospace;
+}
+.order-custom-dropdown[data-dropdown=countryCode] .order-dropdown-item {
+  font-size: var(--font-sm);
+}
+.order-custom-dropdown[data-dropdown=countryCode] .order-dropdown-item i {
+  color: #10b981;
+}
+
+.order-input-group .order-custom-dropdown[data-dropdown=countryCode] .order-dropdown-trigger {
+  border-radius: var(--bs-border-radius) 0 0 var(--bs-border-radius);
+  border-right: none;
 }
 
 .form-section {

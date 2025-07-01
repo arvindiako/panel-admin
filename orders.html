@@ -2453,6 +2453,40 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="order-form-section" id="newCustomerFields" style="display: none;">
+                                        <!-- Customer Name Field -->
+                                        <div class="order-form-group">
+                                            <label class="order-form-label" for="customerName">اسم مشتری</label>
+                                            <input type="text" id="customerName" class="form-control order-custom-input"
+                                                placeholder="نام و نام خانوادگی مشتری">
+                                        </div>
+
+                                        <!-- Customer Email Field -->
+                                        <div class="order-form-group">
+                                            <label class="order-form-label" for="customerEmail">ایمیل مشتری</label>
+                                            <input type="email" id="customerEmail"
+                                                class="form-control order-custom-input" placeholder="ایمیل مشتری">
+                                        </div>
+
+                                        <!-- Customer Phone Field -->
+                                        <div class="order-form-group">
+                                            <label class="order-form-label" for="customerPhone">شماره همراه</label>
+                                            <div class="order-input-group input-group mb-3">
+                                                <!-- Country Code Dropdown -->
+                                                <div class="customer-group d-flex w-100">
+                                                    <div class="customer-phone-wrapper d-flex">
+                                                        <input type="tel" id="customerPhone" class="customer-input customer-phone-input"
+                                                            placeholder="۹۱۲۳۴۵۶۷۸۹" data-input="phone-number"
+                                                            pattern="^(?:\+98|0)?9\d{9}$" required="">
+                                                        <div class="customer-phone-code d-flex">
+                                                            <span class="phone-flag">🇮🇷</span>
+                                                            <span class="phone-code">۹۸+</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <div class="row g-0 row-gap-3 w-100">
                                         <div class="col-sm-6 pe-sm-2">
@@ -2514,8 +2548,7 @@
                                                         <i class="fas fa-calendar"></i>
                                                     </span>
                                                     <input type="text" id="orderDate"
-                                                        class="date-input form-control order-custom-input"
-                                                         readonly>
+                                                        class="date-input form-control order-custom-input" readonly>
                                                 </div>
                                             </div>
 
@@ -2526,8 +2559,7 @@
                                                     </span>
 
                                                     <input type="text" id="orderTime"
-                                                        class="time-input form-control order-custom-input"
-                                                     readonly>
+                                                        class="time-input form-control order-custom-input" readonly>
                                                 </div>
                                             </div>
 
@@ -2737,6 +2769,7 @@
     <script src="./js/filterBox.js"></script>
     <script src="./js/ordersTable.js"></script>
     <script src="./js/chart.js"></script>
+    <script src="/PanelAdmin/js/add-customer.js"></script>
     <script src="/PanelAdmin/js/createOrderModal.js"></script>
     <script src="./js/date-time.js"></script>
     <script src="./js/main.js"></script>
